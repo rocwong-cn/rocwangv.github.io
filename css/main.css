@@ -283,8 +283,8 @@ a {
   word-wrap: break-word;
 }
 a:hover {
-  color: #262a30;
-  border-bottom-color: #262a30;
+  color: #171916;
+  border-bottom-color: #171916;
 }
 ul {
   list-style: none;
@@ -727,8 +727,8 @@ pre .javascript .function {
   padding: 0 20px;
   font-size: 14px;
   color: #fff;
-  background: #262a30;
-  border: 2px solid #262a30;
+  background: #171916;
+  border: 2px solid #171916;
   text-decoration: none;
   border-radius: 0;
   transition-property: background-color;
@@ -738,8 +738,8 @@ pre .javascript .function {
 }
 .btn:hover,
 .post-more-link .btn:hover {
-  border-color: #262a30;
-  color: #262a30;
+  border-color: #171916;
+  color: #171916;
   background: #fff;
 }
 .btn-bar {
@@ -791,7 +791,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #262a30;
+  border-top-color: #171916;
 }
 .pagination .space {
   padding: 0;
@@ -822,7 +822,7 @@ pre .javascript .function {
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #262a30;
+    border-bottom-color: #171916;
   }
 }
 .comments {
@@ -843,7 +843,7 @@ pre .javascript .function {
   z-index: 1050;
   padding: 0 6px;
   width: 25px;
-  background: #262a30;
+  background: #171916;
   font-size: 12px;
   opacity: 1;
   color: #fff;
@@ -876,7 +876,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #262a30;
+  background: #171916;
 }
 .site-meta {
   margin: 0;
@@ -892,7 +892,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #262a30;
+  background: #171916;
   border-bottom: none;
 }
 .brand:hover {
@@ -989,7 +989,7 @@ pre .javascript .function {
   transition-delay: 0s;
 }
 .menu .menu-item a:hover {
-  border-bottom-color: #262a30;
+  border-bottom-color: #171916;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1181,7 +1181,7 @@ pre .javascript .function {
   border-bottom-color: #666;
 }
 .posts-collapse .post-header:hover::before {
-  background: #262a30;
+  background: #171916;
 }
 .posts-collapse .post-meta {
   position: absolute;
@@ -1310,7 +1310,7 @@ pre .javascript .function {
 .post-more-link .btn {
   color: #fff;
   font-size: 14px;
-  background: #262a30;
+  background: #171916;
   border-radius: 0;
   line-height: 2;
 }
@@ -1344,7 +1344,7 @@ pre .javascript .function {
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #262a30;
+  color: #171916;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1514,7 +1514,7 @@ pre .javascript .function {
   width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
-  background: #262a30;
+  background: #171916;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
@@ -1547,7 +1547,7 @@ pre .javascript .function {
   width: 15px;
   height: 15px;
   padding: 5px;
-  background: #262a30;
+  background: #171916;
   line-height: 0;
   z-index: 1050;
   cursor: pointer;
@@ -1663,7 +1663,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7a9dc2;
+  background: #961fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1701,11 +1701,11 @@ pre .javascript .function {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #c9cabb;
+  border-bottom-color: #c9cabb;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #87daff;
+  color: #c9cabb;
 }
 .sidebar-panel {
   display: none;
@@ -1764,14 +1764,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #c9cabb;
+  border-bottom-color: #c9cabb;
 }
 .post-toc .nav .active-current > a {
-  color: #87daff;
+  color: #c9cabb;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #c9cabb;
 }
 .footer {
   font-size: 14px;
@@ -2221,7 +2221,7 @@ a.search-result {
   padding-left: 10px;
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #87daff;
+  background: #c9cabb;
 }
 .page-post-detail .comments {
   overflow: hidden;
@@ -2242,7 +2242,7 @@ a.search-result {
 .custom-logo .site-title {
   margin: 10px auto 0;
   font-size: 24px;
-  color: #262a30;
+  color: #171916;
 }
 .custom-logo .site-title a {
   border: none;
