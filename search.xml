@@ -10,6 +10,13 @@
 
     
     <entry>
+      <title><![CDATA[android打渠道包]]></title>
+      <url>%2F2016%2F12%2F10%2Fandroid%E6%89%93%E6%B8%A0%E9%81%93%E5%8C%85%2F</url>
+      <content type="text"><![CDATA[首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包 android {}安卓市场 c360 {}360市场 xiaomi {}小米市场 yingyongbao {}应用宝 flyme {}魅族flyme市场 wandoujia {}豌豆荚 anzhi {}安智市场 lenovo {}联想 huawei {}华为 yingyonghui {}应用汇 jifeng {}机锋市场 sougou {}搜狗市场 oppo {}oppo市场 uc {}UC商店/PP助手/淘宝助手 pp {}PP助手 mumayi {}木蚂蚁 vivo {}vivo jinli {}金立 souhu {}搜狐 baidu {}百度市场 productFlavors.all { flavor -&gt; flavor.manifestPlaceholders = [APP_CHANNEL: name] } } app/build.gradle 然後删除manifestPlaceholders里面的APP_CHANNEL, AndroidManifest.xml里面添加]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>%2F2016%2F12%2F08%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

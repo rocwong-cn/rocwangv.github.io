@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="不想和他们一样!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RocWang">
-<meta property="og:url" content="http://yoursite.com/tags/PS3/index.html">
+<meta name="description" content="首先需要在android/app/build.gradle裡面添加一下命令：
+productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android打渠道包">
+<meta property="og:url" content="http://yoursite.com/2016/12/10/android打渠道包/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="不想和他们一样!">
+<meta property="og:description" content="首先需要在android/app/build.gradle裡面添加一下命令：
+productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
+<meta property="og:updated_time" content="2017-07-03T02:51:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RocWang">
-<meta name="twitter:description" content="不想和他们一样!">
+<meta name="twitter:title" content="android打渠道包">
+<meta name="twitter:description" content="首先需要在android/app/build.gradle裡面添加一下命令：
+productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
 
 
 
@@ -110,7 +114,7 @@
   };
 </script>
 
-  <title> 标签: PS3 | RocWang </title>
+  <title> android打渠道包 | RocWang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,46 +262,169 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        PS3
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                android打渠道包
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-10T20:35:03+08:00" content="2016-12-10">
+              2016-12-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+
+
+          
+
+          
+          
+             <span id="/2016/12/10/android打渠道包/" class="leancloud_visitors" data-flag-title="android打渠道包">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>首先需要在android/app/build.gradle裡面添加一下命令：</p>
+<blockquote><p>productFlavors {多渠道打包<br>            android {}安卓市场<br>            c360 {}360市场<br>            xiaomi {}小米市场<br>            yingyongbao {}应用宝<br>            flyme {}魅族flyme市场<br>            wandoujia {}豌豆荚<br>            anzhi {}安智市场<br>            lenovo {}联想<br>            huawei {}华为<br>            yingyonghui {}应用汇<br>            jifeng {}机锋市场<br>            sougou {}搜狗市场<br>            oppo {}oppo市场<br>            uc {}UC商店/PP助手/淘宝助手<br>            pp {}PP助手<br>            mumayi {}木蚂蚁<br>            vivo {}vivo<br>            jinli {}金立<br>            souhu {}搜狐<br>            baidu {}百度市场<br>            productFlavors.all { flavor -&gt;<br>                flavor.manifestPlaceholders = [APP_CHANNEL: name]<br>            }<br>        }</p>
+<footer><strong>app/build.gradle</strong></footer></blockquote>
+<p>   然後删除manifestPlaceholders里面的APP_CHANNEL,<br>     AndroidManifest.xml里面添加        <meta-data android:value="${APP_CHANNEL}" android:name="UMENG_CHANNEL"></meta-data></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/12/08/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;background:#f5f5f5;border-left: 5px solid #f44336;">
+    <div>请我喝杯咖啡，加班码字不会累！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏！</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://og3zicoi5.bkt.clouddn.com/tenpay.png" alt="Roc Wang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://og3zicoi5.bkt.clouddn.com/alipay.png" alt="Roc Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-08T14:43:48+08:00"
-              content="2016-12-08" >
-          12-08
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/10/2016年终总结/" rel="prev" title="2016年终总结">
+                2016年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -305,6 +432,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/10/android打渠道包/"
+           data-title="android打渠道包" data-url="http://yoursite.com/2016/12/10/android打渠道包/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://og3zicoi5.bkt.clouddn.com/blogAvatar"
@@ -413,6 +557,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -509,6 +664,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
