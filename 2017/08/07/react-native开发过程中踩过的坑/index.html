@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="hello">
+<meta name="description" content="Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android &amp;a">
 <meta name="keywords" content="踩坑之旅">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-native开发过程中踩过的坑">
 <meta property="og:url" content="http://yoursite.com/2017/08/07/react-native开发过程中踩过的坑/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="hello">
-<meta property="og:updated_time" content="2017-08-07T01:52:53.000Z">
+<meta property="og:description" content="Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android &amp;a">
+<meta property="og:updated_time" content="2017-08-07T02:01:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native开发过程中踩过的坑">
-<meta name="twitter:description" content="hello">
+<meta name="twitter:description" content="Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android &amp;a">
 
 
 
@@ -347,7 +347,8 @@
       
 
       
-        <p>hello   </p>
+        <h1 id="Could-not-install-the-app-on-the-device-read-the-error-above-for-details"><a href="#Could-not-install-the-app-on-the-device-read-the-error-above-for-details" class="headerlink" title="Could not install the app on the device, read the error above for details."></a>Could not install the app on the device, read the error above for details.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">jax$  react-native run-android</div><div class="line">Starting JS server...</div><div class="line">Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug...</div><div class="line"></div><div class="line">Could not install the app on the device, read the error above for details.</div><div class="line">Make sure you have an Android emulator running or a device connected and have</div><div class="line">set up your Android development environment:</div><div class="line">https://facebook.github.io/react-native/docs/android-setup.html</div><div class="line"></div><div class="line">jax$ adb devices</div><div class="line">List of devices attached</div><div class="line">192.168.56.101:5555 device</div></pre></td></tr></table></figure>
+<p>解决方案：<br>首先，你应该检查你android/gradlew的权限，应该是755而不是644，然后在你的根目录执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 755 android/gradlew</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -399,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/10/2016年终总结/" rel="next" title="2016年终总结">
-                <i class="fa fa-chevron-left"></i> 2016年终总结
+              <a href="/2016/12/10/android打渠道包/" rel="next" title="android打渠道包">
+                <i class="fa fa-chevron-left"></i> android打渠道包
               </a>
             
           </div>
@@ -561,7 +562,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Could-not-install-the-app-on-the-device-read-the-error-above-for-details"><span class="nav-number">1.</span> <span class="nav-text">Could not install the app on the device, read the error above for details.</span></a></li></ol></div>
             
           </div>
         </section>
