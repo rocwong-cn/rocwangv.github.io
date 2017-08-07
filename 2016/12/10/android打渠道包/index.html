@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="首先需要在android/app/build.gradle裡面添加一下命令：
-productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
+<meta name="description" content="首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android打渠道包">
 <meta property="og:url" content="http://yoursite.com/2016/12/10/android打渠道包/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="首先需要在android/app/build.gradle裡面添加一下命令：
-productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
-<meta property="og:updated_time" content="2017-07-03T02:51:57.000Z">
+<meta property="og:description" content="首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
+<meta property="og:updated_time" content="2017-07-03T02:58:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android打渠道包">
-<meta name="twitter:description" content="首先需要在android/app/build.gradle裡面添加一下命令：
-productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
+<meta name="twitter:description" content="首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包            android {}安卓市场            c360 {}360市场            xiaomi {}小米市场            yingyongbao {}应用宝            flyme {}魅族flyme市场">
 
 
 
@@ -352,7 +349,7 @@ productFlavors {多渠道打包            android {}安卓市场            c36
         <p>首先需要在android/app/build.gradle裡面添加一下命令：</p>
 <blockquote><p>productFlavors {多渠道打包<br>            android {}安卓市场<br>            c360 {}360市场<br>            xiaomi {}小米市场<br>            yingyongbao {}应用宝<br>            flyme {}魅族flyme市场<br>            wandoujia {}豌豆荚<br>            anzhi {}安智市场<br>            lenovo {}联想<br>            huawei {}华为<br>            yingyonghui {}应用汇<br>            jifeng {}机锋市场<br>            sougou {}搜狗市场<br>            oppo {}oppo市场<br>            uc {}UC商店/PP助手/淘宝助手<br>            pp {}PP助手<br>            mumayi {}木蚂蚁<br>            vivo {}vivo<br>            jinli {}金立<br>            souhu {}搜狐<br>            baidu {}百度市场<br>            productFlavors.all { flavor -&gt;<br>                flavor.manifestPlaceholders = [APP_CHANNEL: name]<br>            }<br>        }</p>
 <footer><strong>app/build.gradle</strong></footer></blockquote>
-<p>   然後删除manifestPlaceholders里面的APP_CHANNEL,<br>     AndroidManifest.xml里面添加        <meta-data android:value="${APP_CHANNEL}" android:name="UMENG_CHANNEL"></meta-data></p>
+<p>   如果用到了友盟等統計插件的話，然後删除manifestPlaceholders里面的APP_CHANNEL,AndroidManifest.xml里面添加：<br>     <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta-data android:value=&quot;$&#123;APP_CHANNEL&#125;&quot;  android:name=&quot;UMENG_CHANNEL&quot;/&gt;</div><div class="line">     </div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -480,7 +477,7 @@ productFlavors {多渠道打包            android {}安卓市场            c36
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -488,7 +485,7 @@ productFlavors {多渠道打包            android {}安卓市场            c36
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -497,7 +494,7 @@ productFlavors {多渠道打包            android {}安卓市场            c36
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
