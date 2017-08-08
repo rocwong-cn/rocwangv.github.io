@@ -91,7 +91,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/07/react-native开发过程中踩过的坑/index.html">
 <meta property="og:site_name" content="RocWang">
 <meta property="og:description" content="0、Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android">
-<meta property="og:updated_time" content="2017-08-08T03:39:51.000Z">
+<meta property="og:updated_time" content="2017-08-08T03:42:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native开发过程中踩过的坑">
 <meta name="twitter:description" content="0、Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android">
@@ -355,11 +355,9 @@
 <h1 id="2、当react-native-unlink-xxxx某些模块是，会出现search-filter-not-a-function的异常，"><a href="#2、当react-native-unlink-xxxx某些模块是，会出现search-filter-not-a-function的异常，" class="headerlink" title="2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，"></a>2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，</h1><p>解决方案：<br>找到ios/项目名.xcodeproj/project.pbxproj，并用webstorm等非xocde编译器打开，然后全局搜索<strong>“$(inherited)”</strong>，<br>将其替换成(“$(inherited)”)。注意：是当前search path下只存在”$(inherited)”一个的情况下。</p>
 <h1 id="3、RN版本0-45以后经常会出现一些third-party的问题，比如：third-party-‘config-h’-file-not-found"><a href="#3、RN版本0-45以后经常会出现一些third-party的问题，比如：third-party-‘config-h’-file-not-found" class="headerlink" title="3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found"></a>3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found</h1><p>解决方案：</p>
 <ul>
-<li>在终端中，导航到（不一定是这个路径，具体看third-party下的glog版本）<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">react-native/third-party/glog.XXXXX</div></pre></td></tr></table></figure>
+<li><p>在项目根目录下执行：（不一定是这个路径，具体看third-party下的glog版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd node_modules/react-native/third-party/glog-0.3.4</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>对于我来说，这个路径是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd node_modules/react-native/third-party/glog-0.3.4</div></pre></td></tr></table></figure></p>
-<ul>
 <li><p>执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">../../scripts/ios-configure-glog.sh</div></pre></td></tr></table></figure>
 </li>
@@ -417,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/10/2016年终总结/" rel="next" title="2016年终总结">
-                <i class="fa fa-chevron-left"></i> 2016年终总结
+              <a href="/2016/12/10/android打渠道包/" rel="next" title="android打渠道包">
+                <i class="fa fa-chevron-left"></i> android打渠道包
               </a>
             
           </div>
