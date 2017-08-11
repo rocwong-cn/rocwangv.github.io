@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="服务端部署," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="不想和他们一样!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RocWang">
-<meta property="og:url" content="http://yoursite.com/tags/踩坑之旅/index.html">
+<meta name="description" content="一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：  123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.x">
+<meta name="keywords" content="服务端部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react项目在服务端部署方案">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/react项目在服务端部署方案/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="不想和他们一样!">
+<meta property="og:description" content="一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：  123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.x">
+<meta property="og:image" content="http://og3zicoi5.bkt.clouddn.com/pm2.png">
+<meta property="og:updated_time" content="2017-08-11T06:00:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RocWang">
-<meta name="twitter:description" content="不想和他们一样!">
+<meta name="twitter:title" content="react项目在服务端部署方案">
+<meta name="twitter:description" content="一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：  123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.x">
+<meta name="twitter:image" content="http://og3zicoi5.bkt.clouddn.com/pm2.png">
 
 
 
@@ -110,7 +114,7 @@
   };
 </script>
 
-  <title> 标签: 踩坑之旅 | RocWang </title>
+  <title> react项目在服务端部署方案 | RocWang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +141,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,46 +262,227 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        踩坑之旅
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react项目在服务端部署方案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-11T13:58:23+08:00" content="2017-08-11">
+              2017-08-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+
+
+          
+
+          
+          
+             <span id="/2017/08/11/react项目在服务端部署方案/" class="leancloud_visitors" data-flag-title="react项目在服务端部署方案">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><h3 id="1、node-环境安装"><a href="#1、node-环境安装" class="headerlink" title="1、node 环境安装"></a>1、node 环境安装</h3><ul>
+<li>登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cd /usr/local</div><div class="line">mkdir node</div><div class="line">cd node</div><div class="line">wget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xz</div><div class="line">xz -d node-v6.11.2-linux-x64.tar.xz</div><div class="line">tar xvf node-v6.11.2-linux-x64.tar</div><div class="line">mv node-v6.11.2-linux-x64 node-v6.11.2</div><div class="line">ln -s /usr/local/node/node-v6.11.2/bin/node  /usr/local/bin/node</div><div class="line">ln -s /usr/local/node/node-v6.11.2/bin/npm  /usr/local/bin/npm</div></pre></td></tr></table></figure>
+<ul>
+<li>至此，node环境已经安装完毕，可以通过<code>node -v</code>来检查是否安装成功。</li>
+</ul>
+<h3 id="2、配置node环境变量"><a href="#2、配置node环境变量" class="headerlink" title="2、配置node环境变量"></a>2、配置node环境变量</h3><blockquote>
+<p>很重要！ 如果不配置环境变量，有些通过npm安装的CLI会找不到。</p>
+</blockquote>
+<ul>
+<li>首先进入配置文件：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile</div></pre></td></tr></table></figure>
+<ul>
+<li>按 <strong>i</strong> 键进入编辑模式，进入文件末尾添加：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node/node-v6.11.2/bin</div><div class="line">export PATH=$NODE_HOME:$PATH</div></pre></td></tr></table></figure>
+<ul>
+<li>然后按 <strong>ESC</strong> 键 ，在控制台输入<code>:wq</code>，回车保存退出。</li>
+</ul>
+<blockquote>
+<p>注：具体的<strong>NODE_HOME</strong>路径来自第一步你的node安装的目录。</p>
+</blockquote>
+<h3 id="3、安装pm2模块"><a href="#3、安装pm2模块" class="headerlink" title="3、安装pm2模块"></a>3、安装<a href="http://pm2.keymetrics.io" target="_blank" rel="external">pm2</a>模块</h3><blockquote>
+<p>pm2 是一个带有负载均衡功能的Node应用的进程管理器.</p>
+</blockquote>
+<ul>
+<li>执行：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure>
+<ul>
+<li>执行成功后，断开当前用户的服务器连接，然后重新登录。</li>
+</ul>
+<h2 id="二、-项目编译"><a href="#二、-项目编译" class="headerlink" title="二、 项目编译"></a>二、 项目编译</h2><h3 id="1、生成项目的根目录"><a href="#1、生成项目的根目录" class="headerlink" title="1、生成项目的根目录"></a>1、生成项目的根目录</h3><p>可以通过命令行或者手动创建的方式生成项目根目录，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir merchant-center</div></pre></td></tr></table></figure>
+<p>可以将<code>merchant-center</code>替换成你自己的项目名称。</p>
+<h3 id="2、配置express环境"><a href="#2、配置express环境" class="headerlink" title="2、配置express环境"></a>2、配置express环境</h3><p>将该文档的同级目录下的<code>app.js</code>和<code>package.json</code>两个文件放在你上一步生成的项目根目录下，然后执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>确保当前目录下生成<code>node_modules</code>文件夹。</p>
+<h3 id="3、生成项目的部署文件"><a href="#3、生成项目的部署文件" class="headerlink" title="3、生成项目的部署文件"></a>3、生成项目的部署文件</h3><ul>
+<li>在你的react项目根目录下执行：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<ul>
+<li>成功后，会生成<strong>dist</strong>目录，该目录的内容就是你要部署到服务器上的文件。</li>
+<li>你可以通过：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sup [-r] [-P port] 源路径 user@目标IP地址:目标路径</div></pre></td></tr></table></figure>
+<p>或者直接通拽的方式将该目录内容放置服务器上，然后将<code>dist</code>放在第一步生成的项目根目录下。此时，项目的目录结构应该是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">merchant-center        		//或其他项目名称</div><div class="line">	|____app.js				//可以打开修改里面的3000端口号</div><div class="line">	|____dist     			//项目生成的静态文件（不要重命名！）</div><div class="line">	|____node_modules		//express的依赖模块</div><div class="line">	|____package.json</div></pre></td></tr></table></figure>
+<h2 id="三、项目启动"><a href="#三、项目启动" class="headerlink" title="三、项目启动"></a>三、项目启动</h2><p>首先确保你已经按照本文档执行了以上的所有步骤。然后在项目的根目录下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js</div></pre></td></tr></table></figure>
+<p>当你看到了这样的日志输出的时候，说明你已经启动成功了！</p>
+<p><img src="http://og3zicoi5.bkt.clouddn.com/pm2.png" alt="启动成功"></p>
+<p>另外，pm2的其他命令行参考：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js              # 项目启动</div><div class="line">pm2 stop all                  # 停止所有pm2启动的应用</div><div class="line">pm2 stop 0                    # 停止进程id为0的进程</div><div class="line">pm2 restart all               # 重启所有应用</div><div class="line">pm2 reload all                # 0延迟重新加载</div><div class="line">pm2 list                      # 列出所有用pm2启动的进程</div><div class="line">pm2 monit                     # 显示每一个应用的内存和cpu使用情况</div><div class="line">pm2 show [app-name]           # 显示当前应用的所有信息</div><div class="line"></div><div class="line">pm2 logs                      # 显示所有应用的日志</div><div class="line">pm2 logs [app-name]           # 显示当前应用的日志</div><div class="line">pm2 logs --json               # 以json格式展示日志</div></pre></td></tr></table></figure>
+<p>更多操作命令可以去<a href="http://pm2.keymetrics.io" target="_blank" rel="external">pm2官网</a>或者其<a href="https://github.com/Unitech/pm2" target="_blank" rel="external">github</a>查看。</p>
+<p>至此，项目已经部署完成啦！</p>
+<p><strong>Open your browser , Enjoy it !</strong></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/08/07/react-native开发过程中踩过的坑/" itemprop="url">
-              
-                <span itemprop="name">react-native开发过程中踩过的坑</span>
-              
-            </a>
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;background:#f5f5f5;border-left: 5px solid #f44336;">
+    <div>请我喝杯咖啡，加班码字不会累！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏！</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://og3zicoi5.bkt.clouddn.com/tenpay.png" alt="Roc Wang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://og3zicoi5.bkt.clouddn.com/alipay.png" alt="Roc Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-07T09:50:23+08:00"
-              content="2017-08-07" >
-          08-07
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/服务端部署/" rel="tag">#服务端部署</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/07/react-native开发过程中踩过的坑/" rel="next" title="react-native开发过程中踩过的坑">
+                <i class="fa fa-chevron-left"></i> react-native开发过程中踩过的坑
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -305,6 +490,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/08/11/react项目在服务端部署方案/"
+           data-title="react项目在服务端部署方案" data-url="http://yoursite.com/2017/08/11/react项目在服务端部署方案/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://og3zicoi5.bkt.clouddn.com/blogAvatar"
@@ -413,6 +615,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、环境搭建"><span class="nav-number">1.</span> <span class="nav-text">一、环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、node-环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">1、node 环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、配置node环境变量"><span class="nav-number">1.2.</span> <span class="nav-text">2、配置node环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、安装pm2模块"><span class="nav-number">1.3.</span> <span class="nav-text">3、安装pm2模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-项目编译"><span class="nav-number">2.</span> <span class="nav-text">二、 项目编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、生成项目的根目录"><span class="nav-number">2.1.</span> <span class="nav-text">1、生成项目的根目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、配置express环境"><span class="nav-number">2.2.</span> <span class="nav-text">2、配置express环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、生成项目的部署文件"><span class="nav-number">2.3.</span> <span class="nav-text">3、生成项目的部署文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、项目启动"><span class="nav-number">3.</span> <span class="nav-text">三、项目启动</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -509,6 +722,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
