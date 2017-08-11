@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F08%2F11%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[react项目在服务端部署方案]]></title>
       <url>%2F2017%2F08%2F11%2Freact%E9%A1%B9%E7%9B%AE%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88%2F</url>
       <content type="text"><![CDATA[一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行： 123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.xztar xvf node-v6.11.2-linux-x64.tarmv node-v6.11.2-linux-x64 node-v6.11.2ln -s /usr/local/node/node-v6.11.2/bin/node /usr/local/bin/nodeln -s /usr/local/node/node-v6.11.2/bin/npm /usr/local/bin/npm 至此，node环境已经安装完毕，可以通过node -v来检查是否安装成功。 2、配置node环境变量 很重要！ 如果不配置环境变量，有些通过npm安装的CLI会找不到。 首先进入配置文件： 1vi /etc/profile 按 i 键进入编辑模式，进入文件末尾添加： 12export NODE_HOME=/usr/local/node/node-v6.11.2/binexport PATH=$NODE_HOME:$PATH 然后按 ESC 键 ，在控制台输入:wq，回车保存退出。 注：具体的NODE_HOME路径来自第一步你的node安装的目录。 3、安装pm2模块 pm2 是一个带有负载均衡功能的Node应用的进程管理器. 执行： 1npm install -g pm2 执行成功后，断开当前用户的服务器连接，然后重新登录。 二、 项目编译1、生成项目的根目录可以通过命令行或者手动创建的方式生成项目根目录，如： 1mkdir merchant-center 可以将merchant-center替换成你自己的项目名称。 2、配置express环境将该文档的同级目录下的app.js和package.json两个文件放在你上一步生成的项目根目录下，然后执行： 1npm install 确保当前目录下生成node_modules文件夹。 3、生成项目的部署文件 在你的react项目根目录下执行： 1npm run build 成功后，会生成dist目录，该目录的内容就是你要部署到服务器上的文件。 你可以通过： 1sup [-r] [-P port] 源路径 user@目标IP地址:目标路径 或者直接通拽的方式将该目录内容放置服务器上，然后将dist放在第一步生成的项目根目录下。此时，项目的目录结构应该是： 12345merchant-center //或其他项目名称 |____app.js //可以打开修改里面的3000端口号 |____dist //项目生成的静态文件（不要重命名！） |____node_modules //express的依赖模块 |____package.json 三、项目启动首先确保你已经按照本文档执行了以上的所有步骤。然后在项目的根目录下执行： 1pm2 start app.js 当你看到了这样的日志输出的时候，说明你已经启动成功了！ 另外，pm2的其他命令行参考： 123456789101112pm2 start app.js # 项目启动pm2 stop all # 停止所有pm2启动的应用pm2 stop 0 # 停止进程id为0的进程pm2 restart all # 重启所有应用pm2 reload all # 0延迟重新加载pm2 list # 列出所有用pm2启动的进程pm2 monit # 显示每一个应用的内存和cpu使用情况pm2 show [app-name] # 显示当前应用的所有信息pm2 logs # 显示所有应用的日志pm2 logs [app-name] # 显示当前应用的日志pm2 logs --json # 以json格式展示日志 更多操作命令可以去pm2官网或者其github查看。 至此，项目已经部署完成啦！ Open your browser , Enjoy it !]]></content>
@@ -27,13 +34,6 @@
       <title><![CDATA[2016年终总结]]></title>
       <url>%2F2016%2F12%2F10%2F2016%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
       <content type="text"><![CDATA[流光容易把人抛，红了樱桃，绿了芭蕉。 &emsp;&emsp;人们总是在感叹时光的飞逝，岁月的无情，眼看它红樱桃，眼看它绿芭蕉，总想着从明天开始我要如何努力的迎头赶上。可是今天还长，明天还远，自己定下的明天一直没有来到，无限颓废的今天一直过不去。 &emsp;&emsp;转眼一年即逝，既为慰藉逝去的一年，也为总结得失，故写一下这些流水账于此。 关键词：年初；商城；山东济南；投资？；Ionic；上线； &emsp;&emsp;年初，我们离开了丰瑞祥，创办了一家小公司，之于说公司，倒不如说是工作室。余、晋、郭、张、黄、李，我们七个人，郭主外，负责市场部，其余的除了余之外的我们几个主内负责技术研发。公司成立伊始，其实尚不足我们7个，只有晋和郭我们三个，当时接了一个山东大学的项目，做一个线上的商城和发布活动的app，android &amp; ios &amp; 微网站，项目总共下来30万左右吧，开发周期定的是一个月。时间紧！任务重！考虑到这些因素，我们当时就用了跨平台的技术框架Ionic！由于我们在北京这边当时也没办公地点，郭也正好在山东找了一个投资，说是如果能完成这个项目，就会投钱给我们，所以我们当时就直奔山东济南了。 &emsp;&emsp;刚去的几天，我和晋住的是宾馆，一天好像是150块钱，郭男朋友在山东，所以她不和我们一起住。由于白天要去投资方的公司去上班，所以就租住在离公司不远的地方，150块钱租的地方环境并不好，一到晚上隔壁房间还很闹，我们晚上完全没办法工作，几经商议后，我们退了宾馆租了一个两居室，为期一月，3000元。环境很好，熬夜也很多，由于我们之前还是有一些商城的开发经验的，所以项目的开发过程也很顺利。一个月内，完成了三个平台的应用上线！ &emsp;&emsp;呼~项目上线了，终于可以松一口气了。可是这个时候，投资方却传来消息说公司账务问题可能没办法注资给我们了。言下之意也很明显，也许是看我们团队太小，也可能是滋生了其他想法，反正就是不投钱了。无论如何，他们也还是对我们有所帮助的，在此致谢。 &emsp;&emsp;项目完成了，晋思家心切，我也思霾心切（MDZZ?），于是我们就返京了。 关键词：北京；VR；地下室；内蒙；奶牛；mac book pro；’郭’离开； &emsp;&emsp;啊，北京！还是熟悉的配方，熟悉的味道。闻着北京厚重的雾霾味道，我们回来了！ &emsp;&emsp;返京之前，余和郭在上地三街那边找了一个孵化器，孵化器内公司主要是做VR，不管怎样，我们暂时安定下来了。回到北京的这段时间，断断续续的维护了一段时间山东的那个商城项目，当时也感觉到了VR的火热，我们团队也有意想朝VR的这个方面去做，但是奈何我们都没有相关方面的经验，只好作罢。这时郭也正好拿到一个内蒙与牛相关的项目，但是需要去内蒙那边考核一下，实地感受一下牧民朋友和牛的热情（？？？）。 蓝蓝的天空 清清的湖水 哎耶绿绿的草原 这是我的家 哎耶奔驰的骏马 洁白的羊群 哎耶还有你姑娘 这是我的家 哎耶 腾格尔《天堂》 &emsp;&emsp;到了内蒙才知道，这个词里面唱的真的是真的！不过，内蒙的大哥们喝酒真的是豪爽，见面先三碗内蒙原浆。去了内蒙三天，没有一天晚上是竖着回酒店的。。。值得一提的是回京的时候，我们租了一辆SUV从内蒙的乡下一路开车回赤峰机场，在一望无际的公路上一路狂奔，简直不要太爽！ &emsp;&emsp;项目推进过程中，我们内部却因为公司这段时间运营的还不错，开始在股份分配方面产生了分歧，最后没有谈拢，郭选择离开，并且带走了之前她接的山东和内蒙的项目，向我们支付了一些劳动报酬。其中是非对错我不想过多描述。 &emsp;&emsp;余这段时间也拿到了一个pos机相关的项目，由于pos机也是新型的android系统，技术选型还是定为Ionic，我也买了人生中第一本mac；虽然有项目在做，但是我们团队当时确实也感到了创业的艰难，于是项目做完之后，至7月底，我们团队整体就进入了元银国际。 关键词：元银国际；直播；react-native； &emsp;&emsp;进入元银国际之后开始了第一个项目就是以直播为主题的app，由于之前用的Ionic在性能上的问题还是很大，于是当时就在技术选型上商议了很久，最终定为react-native，然而我和晋当时都没有这方面的开发经验，于是就开始了边学边做的开发过程。开发过程中，困难重重也受益良多。 &emsp;&emsp;这一年过的很快，在技术方面，从java转向了nodejs，然后自学了react-native，也开发了两个上架的app，近期目标是学习android原生开发，不断丰富完善自己的技术栈。向着全栈前进！！！]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2016%2F12%2F08%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
     </entry>
 
     
