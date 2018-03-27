@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -84,15 +84,17 @@
 
 
 
-<meta name="description" content="不想和他们一样!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RocWang">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+<meta name="description" content="使用正则和replace实现千位分隔符 1&apos;1234567890&apos;.replace(/\B\d&amp;#123;3&amp;#125;/g,&apos;,$&amp;amp;’);  css3 中使图片变色的方式：filter(gray)  css3 中的动态计算函数：calc() = calc(四则运算)，需要注意的是，运算符前后都需要保留一个空格 , 例如： 1width: calc(100% - 10px)  100vh">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记一">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/学习笔记一/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="不想和他们一样!">
+<meta property="og:description" content="使用正则和replace实现千位分隔符 1&apos;1234567890&apos;.replace(/\B\d&amp;#123;3&amp;#125;/g,&apos;,$&amp;amp;’);  css3 中使图片变色的方式：filter(gray)  css3 中的动态计算函数：calc() = calc(四则运算)，需要注意的是，运算符前后都需要保留一个空格 , 例如： 1width: calc(100% - 10px)  100vh">
+<meta property="og:updated_time" content="2018-03-27T09:30:35.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RocWang">
-<meta name="twitter:description" content="不想和他们一样!">
+<meta name="twitter:title" content="学习笔记一">
+<meta name="twitter:description" content="使用正则和replace实现千位分隔符 1&apos;1234567890&apos;.replace(/\B\d&amp;#123;3&amp;#125;/g,&apos;,$&amp;amp;’);  css3 中使图片变色的方式：filter(gray)  css3 中的动态计算函数：calc() = calc(四则运算)，需要注意的是，运算符前后都需要保留一个空格 , 例如： 1width: calc(100% - 10px)  100vh">
 
 
 
@@ -110,7 +112,7 @@
   };
 </script>
 
-  <title> 归档 | RocWang </title>
+  <title> 学习笔记一 | RocWang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,103 +260,190 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                学习笔记一
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-27T17:09:49+08:00" content="2018-03-27">
+              2018-03-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/FE/" itemprop="url" rel="index">
+                    <span itemprop="name">FE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+
+
+          
+
+          
+          
+             <span id="/2018/03/27/学习笔记一/" class="leancloud_visitors" data-flag-title="学习笔记一">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <ul>
+<li><p>使用正则和replace实现千位分隔符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'1234567890'</span>.replace(<span class="regexp">/\B\d&#123;3&#125;/g</span>,<span class="string">',$&amp;’);</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>css3 中使图片变色的方式：filter(gray)</p>
+</li>
+<li><p>css3 中的动态计算函数：calc() = calc(四则运算)，<strong>需要注意的是，运算符前后都需要保留一个空格</strong> , 例如：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">width</span>: calc(<span class="number">100%</span> - <span class="number">10px</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>100vh表示屏幕内部高度，100vw表示屏幕内部宽度</p>
+</li>
+<li><p>怎么让Chrome支持小于12px 的文字</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p&#123;<span class="attribute">font-size</span>:<span class="number">10px</span>;-webkit-<span class="attribute">transform</span>:scale(<span class="number">0.8</span>);&#125;<span class="comment">//0.8是缩放比例</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如果需要手动写动画，你认为最小时间间隔是多久</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">多数显示器默认频率是<span class="number">60Hz</span>，即<span class="number">1</span>秒刷新<span class="number">60</span>次，所以理论上最小间隔为<span class="number">1</span>/<span class="number">60</span>＊<span class="number">1000ms</span> ＝ <span class="number">16.7ms</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如何判断一个对象是否属于某个类？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">使用<span class="keyword">instanceof</span> 即<span class="keyword">if</span>(a <span class="keyword">instanceof</span> Person)&#123;alert(<span class="string">'yes'</span>);&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>写一个通用的事件侦听器函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// event(事件)工具集，来源：github.com/markyun</span></div><div class="line">RocWang.Event = &#123;</div><div class="line"><span class="comment">// 页面加载完成后</span></div><div class="line">  readyEvent: <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (fn == <span class="literal">null</span>) &#123;</div><div class="line">      fn = <span class="built_in">document</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> oldonload = <span class="built_in">window</span>.onload;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">window</span>.onload != <span class="string">'function'</span>) &#123;</div><div class="line">      <span class="built_in">window</span>.onload = fn;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        oldonload();</div><div class="line">        fn();</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 视能力分别使用dom0||dom2||IE方式 来绑定事件</span></div><div class="line"><span class="comment">// 参数： 操作的元素,事件名称 ,事件处理程序</span></div><div class="line">  addEvent: <span class="function"><span class="keyword">function</span> (<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.addEventListener) &#123;</div><div class="line"><span class="comment">//事件类型、需要执行的函数、是否捕捉</span></div><div class="line">      element.addEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</div><div class="line">      element.attachEvent(<span class="string">'on'</span> + type, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        handler.call(element);</div><div class="line">      &#125;);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      element[<span class="string">'on'</span> + type] = handler;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 移除事件</span></div><div class="line">  removeEvent: <span class="function"><span class="keyword">function</span> (<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (element.removeEnentListener) &#123;</div><div class="line">      element.removeEnentListener(type, handler, <span class="literal">false</span>);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.datachEvent) &#123;</div><div class="line">      element.detachEvent(<span class="string">'on'</span> + type, handler);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      element[<span class="string">'on'</span> + type] = <span class="literal">null</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)</span></div><div class="line">  stopPropagation: <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (ev.stopPropagation) &#123;</div><div class="line">      ev.stopPropagation();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      ev.cancelBubble = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 取消事件的默认行为</span></div><div class="line">  preventDefault: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (event.preventDefault) &#123;</div><div class="line">      event.preventDefault();</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      event.returnValue = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 获取事件目标</span></div><div class="line">  getTarget: <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">  &#125;,</div><div class="line"><span class="comment">// 获取event对象的引用，取到事件的所有信息，确保随时能使用event；</span></div><div class="line">  getEvent: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> ev = e || <span class="built_in">window</span>.event;</div><div class="line">    <span class="keyword">if</span> (!ev) &#123;</div><div class="line">      <span class="keyword">var</span> c = <span class="keyword">this</span>.getEvent.caller;</div><div class="line">      <span class="keyword">while</span> (c) &#123;</div><div class="line">        ev = c.arguments[<span class="number">0</span>];</div><div class="line">        <span class="keyword">if</span> (ev &amp;&amp; Event == ev.constructor) &#123;</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        c = c.caller;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ev;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;background:#f5f5f5;border-left: 5px solid #f44336;">
+    <div>请我喝杯咖啡，加班码字不会累！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏！</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://og3zicoi5.bkt.clouddn.com/tenpay.png" alt="Roc Wang WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://og3zicoi5.bkt.clouddn.com/alipay.png" alt="Roc Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/10/2016年终总结/" itemprop="url">
-              
-                <span itemprop="name">2016年终总结</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/10/2017年终总结/" rel="next" title="2017年终总结">
+                <i class="fa fa-chevron-left"></i> 2017年终总结
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-10T20:35:03+08:00"
-              content="2016-12-10" >
-          12-10
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/10/android打渠道包/" itemprop="url">
-              
-                <span itemprop="name">android打渠道包</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-10T20:35:03+08:00"
-              content="2016-12-10" >
-          12-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +451,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/03/27/学习笔记一/"
+           data-title="学习笔记一" data-url="http://yoursite.com/2018/03/27/学习笔记一/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -381,8 +478,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://og3zicoi5.bkt.clouddn.com/blogAvatar"
@@ -470,6 +576,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -566,11 +683,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
