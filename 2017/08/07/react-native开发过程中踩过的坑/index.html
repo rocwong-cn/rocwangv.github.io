@@ -91,6 +91,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/07/react-native开发过程中踩过的坑/index.html">
 <meta property="og:site_name" content="RocWang">
 <meta property="og:description" content="0、Could not install the app on the device, read the error above for details.123456789101112jax$  react-native run-androidStarting JS server...Building and installing the app on the device (cd android">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-08-08T03:42:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-native开发过程中踩过的坑">
@@ -347,19 +348,19 @@
       
 
       
-        <h1 id="0、Could-not-install-the-app-on-the-device-read-the-error-above-for-details"><a href="#0、Could-not-install-the-app-on-the-device-read-the-error-above-for-details" class="headerlink" title="0、Could not install the app on the device, read the error above for details."></a>0、Could not install the app on the device, read the error above for details.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">jax$  react-native run-android</div><div class="line">Starting JS server...</div><div class="line">Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug...</div><div class="line"></div><div class="line">Could not install the app on the device, read the error above for details.</div><div class="line">Make sure you have an Android emulator running or a device connected and have</div><div class="line">set up your Android development environment:</div><div class="line">https://facebook.github.io/react-native/docs/android-setup.html</div><div class="line"></div><div class="line">jax$ adb devices</div><div class="line">List of devices attached</div><div class="line">192.168.56.101:5555 device</div></pre></td></tr></table></figure>
-<p>解决方案：<br>首先，你应该检查你android/gradlew的权限，应该是755而不是644，然后在你的根目录执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 755 android/gradlew</div></pre></td></tr></table></figure></p>
-<h1 id="1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常："><a href="#1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：" class="headerlink" title="1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常："></a>1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error: PCH was compiled with module cache path</div></pre></td></tr></table></figure>
-<p>解决方案：在项目根目录下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf ios/build/ModuleCache/*</div></pre></td></tr></table></figure></p>
+        <h1 id="0、Could-not-install-the-app-on-the-device-read-the-error-above-for-details"><a href="#0、Could-not-install-the-app-on-the-device-read-the-error-above-for-details" class="headerlink" title="0、Could not install the app on the device, read the error above for details."></a>0、Could not install the app on the device, read the error above for details.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">jax$  react-native run-android</span><br><span class="line">Starting JS server...</span><br><span class="line">Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug...</span><br><span class="line"></span><br><span class="line">Could not install the app on the device, read the error above for details.</span><br><span class="line">Make sure you have an Android emulator running or a device connected and have</span><br><span class="line">set up your Android development environment:</span><br><span class="line">https://facebook.github.io/react-native/docs/android-setup.html</span><br><span class="line"></span><br><span class="line">jax$ adb devices</span><br><span class="line">List of devices attached</span><br><span class="line">192.168.56.101:5555 device</span><br></pre></td></tr></table></figure>
+<p>解决方案：<br>首先，你应该检查你android/gradlew的权限，应该是755而不是644，然后在你的根目录执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 android/gradlew</span><br></pre></td></tr></table></figure></p>
+<h1 id="1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常："><a href="#1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：" class="headerlink" title="1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常："></a>1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: PCH was compiled with module cache path</span><br></pre></td></tr></table></figure>
+<p>解决方案：在项目根目录下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ios/build/ModuleCache/*</span><br></pre></td></tr></table></figure></p>
 <p>然后再react-native run-ios,搞定。</p>
 <h1 id="2、当react-native-unlink-xxxx某些模块是，会出现search-filter-not-a-function的异常，"><a href="#2、当react-native-unlink-xxxx某些模块是，会出现search-filter-not-a-function的异常，" class="headerlink" title="2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，"></a>2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，</h1><p>解决方案：<br>找到ios/项目名.xcodeproj/project.pbxproj，并用webstorm等非xocde编译器打开，然后全局搜索<strong>“$(inherited)”</strong>，<br>将其替换成(“$(inherited)”)。注意：是当前search path下只存在”$(inherited)”一个的情况下。</p>
 <h1 id="3、RN版本0-45以后经常会出现一些third-party的问题，比如：third-party-‘config-h’-file-not-found"><a href="#3、RN版本0-45以后经常会出现一些third-party的问题，比如：third-party-‘config-h’-file-not-found" class="headerlink" title="3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found"></a>3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found</h1><p>解决方案：</p>
 <ul>
 <li><p>在项目根目录下执行：（不一定是这个路径，具体看third-party下的glog版本）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd node_modules/react-native/third-party/glog-0.3.4</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd node_modules/react-native/third-party/glog-0.3.4</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">../../scripts/ios-configure-glog.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../../scripts/ios-configure-glog.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Glog配置完成，xcode也会找到<em>config.h</em>头文件了。</p>
 </li>
@@ -415,8 +416,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/10/2016年终总结/" rel="next" title="2016年终总结">
-                <i class="fa fa-chevron-left"></i> 2016年终总结
+              <a href="/2016/12/10/android打渠道包/" rel="next" title="android打渠道包">
+                <i class="fa fa-chevron-left"></i> android打渠道包
               </a>
             
           </div>
@@ -497,7 +498,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

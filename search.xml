@@ -1,56 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  
-    
-    <entry>
-      <title><![CDATA[学习笔记一]]></title>
-      <url>%2F2018%2F03%2F27%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%2F</url>
-      <content type="text"><![CDATA[使用正则和replace实现千位分隔符 1'1234567890'.replace(/\B\d&#123;3&#125;/g,',$&amp;’); css3 中使图片变色的方式：filter(gray) css3 中的动态计算函数：calc() = calc(四则运算)，需要注意的是，运算符前后都需要保留一个空格 , 例如： 1width: calc(100% - 10px) 100vh表示屏幕内部高度，100vw表示屏幕内部宽度 怎么让Chrome支持小于12px 的文字 1p&#123;font-size:10px;-webkit-transform:scale(0.8);&#125;//0.8是缩放比例 如果需要手动写动画，你认为最小时间间隔是多久 1多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms 如何判断一个对象是否属于某个类？ 1使用instanceof 即if(a instanceof Person)&#123;alert('yes');&#125; 写一个通用的事件侦听器函数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677// event(事件)工具集，来源：github.com/markyunRocWang.Event = &#123;// 页面加载完成后 readyEvent: function (fn) &#123; if (fn == null) &#123; fn = document; &#125; var oldonload = window.onload; if (typeof window.onload != 'function') &#123; window.onload = fn; &#125; else &#123; window.onload = function () &#123; oldonload(); fn(); &#125;; &#125; &#125;,// 视能力分别使用dom0||dom2||IE方式 来绑定事件// 参数： 操作的元素,事件名称 ,事件处理程序 addEvent: function (element, type, handler) &#123; if (element.addEventListener) &#123;//事件类型、需要执行的函数、是否捕捉 element.addEventListener(type, handler, false); &#125; else if (element.attachEvent) &#123; element.attachEvent('on' + type, function () &#123; handler.call(element); &#125;); &#125; else &#123; element['on' + type] = handler; &#125; &#125;,// 移除事件 removeEvent: function (element, type, handler) &#123; if (element.removeEnentListener) &#123; element.removeEnentListener(type, handler, false); &#125; else if (element.datachEvent) &#123; element.detachEvent('on' + type, handler); &#125; else &#123; element['on' + type] = null; &#125; &#125;,// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获) stopPropagation: function (ev) &#123; if (ev.stopPropagation) &#123; ev.stopPropagation(); &#125; else &#123; ev.cancelBubble = true; &#125; &#125;,// 取消事件的默认行为 preventDefault: function (event) &#123; if (event.preventDefault) &#123; event.preventDefault(); &#125; else &#123; event.returnValue = false; &#125; &#125;,// 获取事件目标 getTarget: function (event) &#123; return event.target || event.srcElement; &#125;,// 获取event对象的引用，取到事件的所有信息，确保随时能使用event； getEvent: function (e) &#123; var ev = e || window.event; if (!ev) &#123; var c = this.getEvent.caller; while (c) &#123; ev = c.arguments[0]; if (ev &amp;&amp; Event == ev.constructor) &#123; break; &#125; c = c.caller; &#125; &#125; return ev; &#125;&#125;;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[2017年终总结]]></title>
-      <url>%2F2018%2F02%2F10%2F2017%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
-      <content type="text"><![CDATA[动荡的一年。 &emsp;&emsp;每到临近年终，心里都有一种失落的感觉，这种失落感既来于年初给自己定的目标很多没有实现，也源于在很多机遇来临的时候没有好好把握。 &gt; 外部因素：16年底进入的元银在17年初黄了，被老东家丰瑞祥召回，屋漏偏逢连夜雨，丰瑞祥在10月份资金链断裂，发不出工资，大批量裁员，我也离职了，来到了文思。 &gt; 工作方面：在技术的成长反面，今年是我进步最慢的一年，对自己十分不满意。做了一年的RN+react，想起去年给自己定下要征服android，迈进全栈的计划，对自己失望。 使用RN &amp; react-navigation &amp; redux封装了一个脚手架，比起官网例子更简单易懂，目前在github上的star 达到21个。 学习mobx的过程中，使用RN &amp; mobx &amp; react-native-router-flux开发了一个简单的APP (ASimpleApp),也开源在了GitHub。 使用react重构了公司原来的前端框架，并开源了自己使用node部署react/vue项目的服务端部署方案。 &gt; 生活方面： 还是单身狗，汪汪汪！！！！！！ 学会了红烧肉，大盘鸡，学会了做鱼。 几乎要放弃LOL了，吃鸡真好玩！ 一个人的日子过够了啊！ 学会了滑板，虽然快被摔死了，虽然右腿膝盖上留下了一块很大的疤痕。 自己的脾气今年有好那么一点点，学会克制。 &gt; 新年寄语： 改改自己的臭脾气吧，不然真的孤独终老了！ 致力于学习原生JS和nodeJs，至少要看三本技术方面的书，并且po出读书笔记！ 一！定！要！勤跑步，经常运动，不要做一个死肥宅了啊！ 晚上十二点之前一定要睡觉啊，奔三了啊，身体不比当年了啊！ 碰见喜欢的女孩子，一定要勇敢一点表达出来啊！ 总之吧，新的一年，新的开始，一定要比去年好，要有长足的进步，不要让明年写年终总结的时候又这样尴尬的凑字了啊啊啊！！]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F08%2F11%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[react项目在服务端部署方案]]></title>
-      <url>%2F2017%2F08%2F11%2Freact%E9%A1%B9%E7%9B%AE%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88%2F</url>
-      <content type="text"><![CDATA[一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行： 123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.xztar xvf node-v6.11.2-linux-x64.tarmv node-v6.11.2-linux-x64 node-v6.11.2ln -s /usr/local/node/node-v6.11.2/bin/node /usr/local/bin/nodeln -s /usr/local/node/node-v6.11.2/bin/npm /usr/local/bin/npm 至此，node环境已经安装完毕，可以通过node -v来检查是否安装成功。 2、配置node环境变量 很重要！ 如果不配置环境变量，有些通过npm安装的CLI会找不到。 首先进入配置文件： 1vi /etc/profile 按 i 键进入编辑模式，进入文件末尾添加： 12export NODE_HOME=/usr/local/node/node-v6.11.2/binexport PATH=$NODE_HOME:$PATH 然后按 ESC 键 ，在控制台输入:wq，回车保存退出。 注：具体的NODE_HOME路径来自第一步你的node安装的目录。 3、安装pm2模块 pm2 是一个带有负载均衡功能的Node应用的进程管理器. 执行： 1npm install -g pm2 执行成功后，断开当前用户的服务器连接，然后重新登录。 二、 项目编译1、生成项目的根目录可以通过命令行或者手动创建的方式生成项目根目录，如： 1mkdir merchant-center 可以将merchant-center替换成你自己的项目名称。 2、配置express环境将该文档的同级目录下的app.js和package.json两个文件放在你上一步生成的项目根目录下，然后执行： 1npm install 确保当前目录下生成node_modules文件夹。 3、生成项目的部署文件 在你的react项目根目录下执行： 1npm run build 成功后，会生成dist目录，该目录的内容就是你要部署到服务器上的文件。 你可以通过： 1sup [-r] [-P port] 源路径 user@目标IP地址:目标路径 或者直接通拽的方式将该目录内容放置服务器上，然后将dist放在第一步生成的项目根目录下。此时，项目的目录结构应该是： 12345merchant-center //或其他项目名称 |____app.js //可以打开修改里面的3000端口号 |____dist //项目生成的静态文件（不要重命名！） |____node_modules //express的依赖模块 |____package.json 三、项目启动首先确保你已经按照本文档执行了以上的所有步骤。然后在项目的根目录下执行： 1pm2 start app.js 当你看到了这样的日志输出的时候，说明你已经启动成功了！ 另外，pm2的其他命令行参考： 123456789101112pm2 start app.js # 项目启动pm2 stop all # 停止所有pm2启动的应用pm2 stop 0 # 停止进程id为0的进程pm2 restart all # 重启所有应用pm2 reload all # 0延迟重新加载pm2 list # 列出所有用pm2启动的进程pm2 monit # 显示每一个应用的内存和cpu使用情况pm2 show [app-name] # 显示当前应用的所有信息pm2 logs # 显示所有应用的日志pm2 logs [app-name] # 显示当前应用的日志pm2 logs --json # 以json格式展示日志 更多操作命令可以去pm2官网或者其github查看。 至此，项目已经部署完成啦！ Open your browser , Enjoy it !]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[react-native开发过程中踩过的坑]]></title>
-      <url>%2F2017%2F08%2F07%2Freact-native%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%2F</url>
-      <content type="text"><![CDATA[0、Could not install the app on the device, read the error above for details.123456789101112jax$ react-native run-androidStarting JS server...Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug...Could not install the app on the device, read the error above for details.Make sure you have an Android emulator running or a device connected and haveset up your Android development environment:https://facebook.github.io/react-native/docs/android-setup.htmljax$ adb devicesList of devices attached192.168.56.101:5555 device 解决方案：首先，你应该检查你android/gradlew的权限，应该是755而不是644，然后在你的根目录执行：1chmod 755 android/gradlew 1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：1error: PCH was compiled with module cache path 解决方案：在项目根目录下执行1rm -rf ios/build/ModuleCache/* 然后再react-native run-ios,搞定。 2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，解决方案：找到ios/项目名.xcodeproj/project.pbxproj，并用webstorm等非xocde编译器打开，然后全局搜索“$(inherited)”，将其替换成(“$(inherited)”)。注意：是当前search path下只存在”$(inherited)”一个的情况下。 3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found解决方案： 在项目根目录下执行：（不一定是这个路径，具体看third-party下的glog版本） 1cd node_modules/react-native/third-party/glog-0.3.4 执行 1../../scripts/ios-configure-glog.sh Glog配置完成，xcode也会找到config.h头文件了。]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[2016年终总结]]></title>
-      <url>%2F2016%2F12%2F10%2F2016%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
-      <content type="text"><![CDATA[流光容易把人抛，红了樱桃，绿了芭蕉。 &emsp;&emsp;人们总是在感叹时光的飞逝，岁月的无情，眼看它红樱桃，眼看它绿芭蕉，总想着从明天开始我要如何努力的迎头赶上。可是今天还长，明天还远，自己定下的明天一直没有来到，无限颓废的今天一直过不去。 &emsp;&emsp;转眼一年即逝，既为慰藉逝去的一年，也为总结得失，故写一下这些流水账于此。 关键词：年初；商城；山东济南；投资？；Ionic；上线； &emsp;&emsp;年初，我们离开了丰瑞祥，创办了一家小公司，之于说公司，倒不如说是工作室。余、晋、郭、张、黄、李，我们七个人，郭主外，负责市场部，其余的除了余之外的我们几个主内负责技术研发。公司成立伊始，其实尚不足我们7个，只有晋和郭我们三个，当时接了一个山东大学的项目，做一个线上的商城和发布活动的app，android &amp; ios &amp; 微网站，项目总共下来30万左右吧，开发周期定的是一个月。时间紧！任务重！考虑到这些因素，我们当时就用了跨平台的技术框架Ionic！由于我们在北京这边当时也没办公地点，郭也正好在山东找了一个投资，说是如果能完成这个项目，就会投钱给我们，所以我们当时就直奔山东济南了。 &emsp;&emsp;刚去的几天，我和晋住的是宾馆，一天好像是150块钱，郭男朋友在山东，所以她不和我们一起住。由于白天要去投资方的公司去上班，所以就租住在离公司不远的地方，150块钱租的地方环境并不好，一到晚上隔壁房间还很闹，我们晚上完全没办法工作，几经商议后，我们退了宾馆租了一个两居室，为期一月，3000元。环境很好，熬夜也很多，由于我们之前还是有一些商城的开发经验的，所以项目的开发过程也很顺利。一个月内，完成了三个平台的应用上线！ &emsp;&emsp;呼~项目上线了，终于可以松一口气了。可是这个时候，投资方却传来消息说公司账务问题可能没办法注资给我们了。言下之意也很明显，也许是看我们团队太小，也可能是滋生了其他想法，反正就是不投钱了。无论如何，他们也还是对我们有所帮助的，在此致谢。 &emsp;&emsp;项目完成了，晋思家心切，我也思霾心切（MDZZ?），于是我们就返京了。 关键词：北京；VR；地下室；内蒙；奶牛；mac book pro；’郭’离开； &emsp;&emsp;啊，北京！还是熟悉的配方，熟悉的味道。闻着北京厚重的雾霾味道，我们回来了！ &emsp;&emsp;返京之前，余和郭在上地三街那边找了一个孵化器，孵化器内公司主要是做VR，不管怎样，我们暂时安定下来了。回到北京的这段时间，断断续续的维护了一段时间山东的那个商城项目，当时也感觉到了VR的火热，我们团队也有意想朝VR的这个方面去做，但是奈何我们都没有相关方面的经验，只好作罢。这时郭也正好拿到一个内蒙与牛相关的项目，但是需要去内蒙那边考核一下，实地感受一下牧民朋友和牛的热情（？？？）。 蓝蓝的天空 清清的湖水 哎耶绿绿的草原 这是我的家 哎耶奔驰的骏马 洁白的羊群 哎耶还有你姑娘 这是我的家 哎耶 腾格尔《天堂》 &emsp;&emsp;到了内蒙才知道，这个词里面唱的真的是真的！不过，内蒙的大哥们喝酒真的是豪爽，见面先三碗内蒙原浆。去了内蒙三天，没有一天晚上是竖着回酒店的。。。值得一提的是回京的时候，我们租了一辆SUV从内蒙的乡下一路开车回赤峰机场，在一望无际的公路上一路狂奔，简直不要太爽！ &emsp;&emsp;项目推进过程中，我们内部却因为公司这段时间运营的还不错，开始在股份分配方面产生了分歧，最后没有谈拢，郭选择离开，并且带走了之前她接的山东和内蒙的项目，向我们支付了一些劳动报酬。其中是非对错我不想过多描述。 &emsp;&emsp;余这段时间也拿到了一个pos机相关的项目，由于pos机也是新型的android系统，技术选型还是定为Ionic，我也买了人生中第一本mac；虽然有项目在做，但是我们团队当时确实也感到了创业的艰难，于是项目做完之后，至7月底，我们团队整体就进入了元银国际。 关键词：元银国际；直播；react-native； &emsp;&emsp;进入元银国际之后开始了第一个项目就是以直播为主题的app，由于之前用的Ionic在性能上的问题还是很大，于是当时就在技术选型上商议了很久，最终定为react-native，然而我和晋当时都没有这方面的开发经验，于是就开始了边学边做的开发过程。开发过程中，困难重重也受益良多。 &emsp;&emsp;这一年过的很快，在技术方面，从java转向了nodejs，然后自学了react-native，也开发了两个上架的app，近期目标是学习android原生开发，不断丰富完善自己的技术栈。向着全栈前进！！！]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[android打渠道包]]></title>
-      <url>%2F2016%2F12%2F10%2Fandroid%E6%89%93%E6%B8%A0%E9%81%93%E5%8C%85%2F</url>
-      <content type="text"><![CDATA[首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包 android {}安卓市场 c360 {}360市场 xiaomi {}小米市场 yingyongbao {}应用宝 flyme {}魅族flyme市场 wandoujia {}豌豆荚 anzhi {}安智市场 lenovo {}联想 huawei {}华为 yingyonghui {}应用汇 jifeng {}机锋市场 sougou {}搜狗市场 oppo {}oppo市场 uc {}UC商店/PP助手/淘宝助手 pp {}PP助手 mumayi {}木蚂蚁 vivo {}vivo jinli {}金立 souhu {}搜狐 baidu {}百度市场 productFlavors.all { flavor -&gt; flavor.manifestPlaceholders = [APP_CHANNEL: name] } } app/build.gradle 如果用到了友盟等統計插件的話，然後删除manifestPlaceholders里面的APP_CHANNEL,AndroidManifest.xml里面添加： 12&lt;meta-data android:value=&quot;$&#123;APP_CHANNEL&#125;&quot; android:name=&quot;UMENG_CHANNEL&quot;/&gt;]]></content>
-    </entry>
-
-    
-  
-  
+  <entry>
+    <title><![CDATA[函数柯里化]]></title>
+    <url>%2F2018%2F04%2F03%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。 以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。因此柯里化的过程是逐步传参，逐步缩小函数的适用范围，逐步求解的过程。 先来看一下柯里化的通用实现：12345678function currying(fn) &#123; var slice = Array.prototype.slice, __args = slice.call(arguments, 1); return function () &#123; var __inargs = slice.call(arguments); return fn.apply(null, __args.concat(__inargs)); &#125;; &#125; 解读一下这段代码： line 2 &amp; line 3 : Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组，除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换），所以这里是除了fn之外的参数全部转化为了数组 接下来的 line 4/5/6/7 其实是返回了一个闭包 line 5 将闭包函数内的参数转化为数组 __inargs line 6 执行传入的fn函数，其参数为两次传入参数的集合 注：当apply传入null/undefined为第一个参数的时候将执行js全局对象，浏览器中是window，其他环境是global。 柯里化的实用性提现在很多方面： 1 提高适用性根据以上代码我们来做一个简单的实现： 12345678910111213141516171819202122function apple(sth)&#123; console.log(`apple $&#123;sth&#125;`);&#125;function pineapple(sth)&#123; console.log( `pineapple $&#123;sth&#125;`);&#125;function map(handler,list)&#123; return list.map(handler);&#125;//数据的每一项进行遍历拼接map(apple, ['pen','watch','phone']);map(pineapple, ['pen','watch','phone']);//加入 柯里化 实现后,可以看到和上面的结果是一致的var mapApple = currying(map, apple);mapApple(['pen','watch','phone']);var mapPine = currying(map, pineapple);mapPine(['pen','watch','phone']); 由此，可知柯里化不仅仅是提高了代码的合理性，更重的它突出一种思想—降低适用范围，提高适用性。 2 延迟执行柯里化的另一个应用场景是延迟执行。不断的柯里化，累积传入的参数，最后执行。以下是其通用写法：12345678910var curry = function(fn) &#123; var _args = [] return function cb() &#123; if (arguments.length == 0) &#123; return fn.apply(this, _args) &#125; Array.prototype.push.apply(_args, arguments); return cb; &#125;&#125; 3 固定易变因素柯里化特性决定了它这应用场景。提前把易变因素，传参固定下来，生成一个更明确的应用函数。最典型的代表应用，是bind函数用以固定this这个易变对象。 12345678Function.prototype.bind = function(context) &#123; var _this = this, _args = Array.prototype.slice.call(arguments, 1); return function() &#123; return _this.apply(context, _args.concat(Array.prototype.slice.call(arguments))) &#125;&#125;]]></content>
+      <categories>
+        <category>FE</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[学习笔记一]]></title>
+    <url>%2F2018%2F03%2F27%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[使用正则和replace实现千位分隔符 1'1234567890'.replace(/\B\d&#123;3&#125;/g,',$&amp;’); css3 中使图片变色的方式：filter(gray) css3 中的动态计算函数：calc() = calc(四则运算)，需要注意的是，运算符前后都需要保留一个空格 , 例如： 1width: calc(100% - 10px) 100vh表示屏幕内部高度，100vw表示屏幕内部宽度 怎么让Chrome支持小于12px 的文字 1p&#123;font-size:10px;-webkit-transform:scale(0.8);&#125;//0.8是缩放比例 如果需要手动写动画，你认为最小时间间隔是多久 1多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms 如何判断一个对象是否属于某个类？ 1使用instanceof 即if(a instanceof Person)&#123;alert('yes');&#125; 写一个通用的事件侦听器函数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677// event(事件)工具集，来源：github.com/markyunRocWang.Event = &#123;// 页面加载完成后 readyEvent: function (fn) &#123; if (fn == null) &#123; fn = document; &#125; var oldonload = window.onload; if (typeof window.onload != 'function') &#123; window.onload = fn; &#125; else &#123; window.onload = function () &#123; oldonload(); fn(); &#125;; &#125; &#125;,// 视能力分别使用dom0||dom2||IE方式 来绑定事件// 参数： 操作的元素,事件名称 ,事件处理程序 addEvent: function (element, type, handler) &#123; if (element.addEventListener) &#123;//事件类型、需要执行的函数、是否捕捉 element.addEventListener(type, handler, false); &#125; else if (element.attachEvent) &#123; element.attachEvent('on' + type, function () &#123; handler.call(element); &#125;); &#125; else &#123; element['on' + type] = handler; &#125; &#125;,// 移除事件 removeEvent: function (element, type, handler) &#123; if (element.removeEnentListener) &#123; element.removeEnentListener(type, handler, false); &#125; else if (element.datachEvent) &#123; element.detachEvent('on' + type, handler); &#125; else &#123; element['on' + type] = null; &#125; &#125;,// 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获) stopPropagation: function (ev) &#123; if (ev.stopPropagation) &#123; ev.stopPropagation(); &#125; else &#123; ev.cancelBubble = true; &#125; &#125;,// 取消事件的默认行为 preventDefault: function (event) &#123; if (event.preventDefault) &#123; event.preventDefault(); &#125; else &#123; event.returnValue = false; &#125; &#125;,// 获取事件目标 getTarget: function (event) &#123; return event.target || event.srcElement; &#125;,// 获取event对象的引用，取到事件的所有信息，确保随时能使用event； getEvent: function (e) &#123; var ev = e || window.event; if (!ev) &#123; var c = this.getEvent.caller; while (c) &#123; ev = c.arguments[0]; if (ev &amp;&amp; Event == ev.constructor) &#123; break; &#125; c = c.caller; &#125; &#125; return ev; &#125;&#125;;]]></content>
+      <categories>
+        <category>FE</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2017年终总结]]></title>
+    <url>%2F2018%2F02%2F10%2F2017%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[动荡的一年。 &emsp;&emsp;每到临近年终，心里都有一种失落的感觉，这种失落感既来于年初给自己定的目标很多没有实现，也源于在很多机遇来临的时候没有好好把握。 &gt; 外部因素：16年底进入的元银在17年初黄了，被老东家丰瑞祥召回，屋漏偏逢连夜雨，丰瑞祥在10月份资金链断裂，发不出工资，大批量裁员，我也离职了，来到了文思。 &gt; 工作方面：在技术的成长反面，今年是我进步最慢的一年，对自己十分不满意。做了一年的RN+react，想起去年给自己定下要征服android，迈进全栈的计划，对自己失望。 使用RN &amp; react-navigation &amp; redux封装了一个脚手架，比起官网例子更简单易懂，目前在github上的star 达到21个。 学习mobx的过程中，使用RN &amp; mobx &amp; react-native-router-flux开发了一个简单的APP (ASimpleApp),也开源在了GitHub。 使用react重构了公司原来的前端框架，并开源了自己使用node部署react/vue项目的服务端部署方案。 &gt; 生活方面： 还是单身狗，汪汪汪！！！！！！ 学会了红烧肉，大盘鸡，学会了做鱼。 几乎要放弃LOL了，吃鸡真好玩！ 一个人的日子过够了啊！ 学会了滑板，虽然快被摔死了，虽然右腿膝盖上留下了一块很大的疤痕。 自己的脾气今年有好那么一点点，学会克制。 &gt; 新年寄语： 改改自己的臭脾气吧，不然真的孤独终老了！ 致力于学习原生JS和nodeJs，至少要看三本技术方面的书，并且po出读书笔记！ 一！定！要！勤跑步，经常运动，不要做一个死肥宅了啊！ 晚上十二点之前一定要睡觉啊，奔三了啊，身体不比当年了啊！ 碰见喜欢的女孩子，一定要勇敢一点表达出来啊！ 总之吧，新的一年，新的开始，一定要比去年好，要有长足的进步，不要让明年写年终总结的时候又这样尴尬的凑字了啊啊啊！！]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+      <tags>
+        <tag>又是一年</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F08%2F11%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>叨逼叨</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[react项目在服务端部署方案]]></title>
+    <url>%2F2017%2F08%2F11%2Freact%E9%A1%B9%E7%9B%AE%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行： 123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.xztar xvf node-v6.11.2-linux-x64.tarmv node-v6.11.2-linux-x64 node-v6.11.2ln -s /usr/local/node/node-v6.11.2/bin/node /usr/local/bin/nodeln -s /usr/local/node/node-v6.11.2/bin/npm /usr/local/bin/npm 至此，node环境已经安装完毕，可以通过node -v来检查是否安装成功。 2、配置node环境变量 很重要！ 如果不配置环境变量，有些通过npm安装的CLI会找不到。 首先进入配置文件： 1vi /etc/profile 按 i 键进入编辑模式，进入文件末尾添加： 12export NODE_HOME=/usr/local/node/node-v6.11.2/binexport PATH=$NODE_HOME:$PATH 然后按 ESC 键 ，在控制台输入:wq，回车保存退出。 注：具体的NODE_HOME路径来自第一步你的node安装的目录。 3、安装pm2模块 pm2 是一个带有负载均衡功能的Node应用的进程管理器. 执行： 1npm install -g pm2 执行成功后，断开当前用户的服务器连接，然后重新登录。 二、 项目编译1、生成项目的根目录可以通过命令行或者手动创建的方式生成项目根目录，如： 1mkdir merchant-center 可以将merchant-center替换成你自己的项目名称。 2、配置express环境将该文档的同级目录下的app.js和package.json两个文件放在你上一步生成的项目根目录下，然后执行： 1npm install 确保当前目录下生成node_modules文件夹。 3、生成项目的部署文件 在你的react项目根目录下执行： 1npm run build 成功后，会生成dist目录，该目录的内容就是你要部署到服务器上的文件。 你可以通过： 1sup [-r] [-P port] 源路径 user@目标IP地址:目标路径 或者直接通拽的方式将该目录内容放置服务器上，然后将dist放在第一步生成的项目根目录下。此时，项目的目录结构应该是： 12345merchant-center //或其他项目名称 |____app.js //可以打开修改里面的3000端口号 |____dist //项目生成的静态文件（不要重命名！） |____node_modules //express的依赖模块 |____package.json 三、项目启动首先确保你已经按照本文档执行了以上的所有步骤。然后在项目的根目录下执行： 1pm2 start app.js 当你看到了这样的日志输出的时候，说明你已经启动成功了！ 另外，pm2的其他命令行参考： 123456789101112pm2 start app.js # 项目启动pm2 stop all # 停止所有pm2启动的应用pm2 stop 0 # 停止进程id为0的进程pm2 restart all # 重启所有应用pm2 reload all # 0延迟重新加载pm2 list # 列出所有用pm2启动的进程pm2 monit # 显示每一个应用的内存和cpu使用情况pm2 show [app-name] # 显示当前应用的所有信息pm2 logs # 显示所有应用的日志pm2 logs [app-name] # 显示当前应用的日志pm2 logs --json # 以json格式展示日志 更多操作命令可以去pm2官网或者其github查看。 至此，项目已经部署完成啦！ Open your browser , Enjoy it !]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+      <tags>
+        <tag>服务端部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react-native开发过程中踩过的坑]]></title>
+    <url>%2F2017%2F08%2F07%2Freact-native%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%2F</url>
+    <content type="text"><![CDATA[0、Could not install the app on the device, read the error above for details.123456789101112jax$ react-native run-androidStarting JS server...Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug...Could not install the app on the device, read the error above for details.Make sure you have an Android emulator running or a device connected and haveset up your Android development environment:https://facebook.github.io/react-native/docs/android-setup.htmljax$ adb devicesList of devices attached192.168.56.101:5555 device 解决方案：首先，你应该检查你android/gradlew的权限，应该是755而不是644，然后在你的根目录执行：1chmod 755 android/gradlew 1、当把RN项目从一个目录移动到另一个目录时，run-ios时可能会出现异常：1error: PCH was compiled with module cache path 解决方案：在项目根目录下执行1rm -rf ios/build/ModuleCache/* 然后再react-native run-ios,搞定。 2、当react-native unlink xxxx某些模块是，会出现search.filter not a function的异常，解决方案：找到ios/项目名.xcodeproj/project.pbxproj，并用webstorm等非xocde编译器打开，然后全局搜索“$(inherited)”，将其替换成(“$(inherited)”)。注意：是当前search path下只存在”$(inherited)”一个的情况下。 3、RN版本0.45以后经常会出现一些third-party的问题，比如：third-party: ‘config.h’ file not found解决方案： 在项目根目录下执行：（不一定是这个路径，具体看third-party下的glog版本） 1cd node_modules/react-native/third-party/glog-0.3.4 执行 1../../scripts/ios-configure-glog.sh Glog配置完成，xcode也会找到config.h头文件了。]]></content>
+      <categories>
+        <category>React-Native</category>
+      </categories>
+      <tags>
+        <tag>踩坑之旅</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[android打渠道包]]></title>
+    <url>%2F2016%2F12%2F10%2Fandroid%E6%89%93%E6%B8%A0%E9%81%93%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包 android {}安卓市场 c360 {}360市场 xiaomi {}小米市场 yingyongbao {}应用宝 flyme {}魅族flyme市场 wandoujia {}豌豆荚 anzhi {}安智市场 lenovo {}联想 huawei {}华为 yingyonghui {}应用汇 jifeng {}机锋市场 sougou {}搜狗市场 oppo {}oppo市场 uc {}UC商店/PP助手/淘宝助手 pp {}PP助手 mumayi {}木蚂蚁 vivo {}vivo jinli {}金立 souhu {}搜狐 baidu {}百度市场 productFlavors.all { flavor -&gt; flavor.manifestPlaceholders = [APP_CHANNEL: name] } } app/build.gradle 如果用到了友盟等統計插件的話，然後删除manifestPlaceholders里面的APP_CHANNEL,AndroidManifest.xml里面添加： 12&lt;meta-data android:value=&quot;$&#123;APP_CHANNEL&#125;&quot; android:name=&quot;UMENG_CHANNEL&quot;/&gt;]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[2016年终总结]]></title>
+    <url>%2F2016%2F12%2F10%2F2016%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[流光容易把人抛，红了樱桃，绿了芭蕉。 &emsp;&emsp;人们总是在感叹时光的飞逝，岁月的无情，眼看它红樱桃，眼看它绿芭蕉，总想着从明天开始我要如何努力的迎头赶上。可是今天还长，明天还远，自己定下的明天一直没有来到，无限颓废的今天一直过不去。 &emsp;&emsp;转眼一年即逝，既为慰藉逝去的一年，也为总结得失，故写一下这些流水账于此。 关键词：年初；商城；山东济南；投资？；Ionic；上线； &emsp;&emsp;年初，我们离开了丰瑞祥，创办了一家小公司，之于说公司，倒不如说是工作室。余、晋、郭、张、黄、李，我们七个人，郭主外，负责市场部，其余的除了余之外的我们几个主内负责技术研发。公司成立伊始，其实尚不足我们7个，只有晋和郭我们三个，当时接了一个山东大学的项目，做一个线上的商城和发布活动的app，android &amp; ios &amp; 微网站，项目总共下来30万左右吧，开发周期定的是一个月。时间紧！任务重！考虑到这些因素，我们当时就用了跨平台的技术框架Ionic！由于我们在北京这边当时也没办公地点，郭也正好在山东找了一个投资，说是如果能完成这个项目，就会投钱给我们，所以我们当时就直奔山东济南了。 &emsp;&emsp;刚去的几天，我和晋住的是宾馆，一天好像是150块钱，郭男朋友在山东，所以她不和我们一起住。由于白天要去投资方的公司去上班，所以就租住在离公司不远的地方，150块钱租的地方环境并不好，一到晚上隔壁房间还很闹，我们晚上完全没办法工作，几经商议后，我们退了宾馆租了一个两居室，为期一月，3000元。环境很好，熬夜也很多，由于我们之前还是有一些商城的开发经验的，所以项目的开发过程也很顺利。一个月内，完成了三个平台的应用上线！ &emsp;&emsp;呼~项目上线了，终于可以松一口气了。可是这个时候，投资方却传来消息说公司账务问题可能没办法注资给我们了。言下之意也很明显，也许是看我们团队太小，也可能是滋生了其他想法，反正就是不投钱了。无论如何，他们也还是对我们有所帮助的，在此致谢。 &emsp;&emsp;项目完成了，晋思家心切，我也思霾心切（MDZZ?），于是我们就返京了。 关键词：北京；VR；地下室；内蒙；奶牛；mac book pro；’郭’离开； &emsp;&emsp;啊，北京！还是熟悉的配方，熟悉的味道。闻着北京厚重的雾霾味道，我们回来了！ &emsp;&emsp;返京之前，余和郭在上地三街那边找了一个孵化器，孵化器内公司主要是做VR，不管怎样，我们暂时安定下来了。回到北京的这段时间，断断续续的维护了一段时间山东的那个商城项目，当时也感觉到了VR的火热，我们团队也有意想朝VR的这个方面去做，但是奈何我们都没有相关方面的经验，只好作罢。这时郭也正好拿到一个内蒙与牛相关的项目，但是需要去内蒙那边考核一下，实地感受一下牧民朋友和牛的热情（？？？）。 蓝蓝的天空 清清的湖水 哎耶绿绿的草原 这是我的家 哎耶奔驰的骏马 洁白的羊群 哎耶还有你姑娘 这是我的家 哎耶 腾格尔《天堂》 &emsp;&emsp;到了内蒙才知道，这个词里面唱的真的是真的！不过，内蒙的大哥们喝酒真的是豪爽，见面先三碗内蒙原浆。去了内蒙三天，没有一天晚上是竖着回酒店的。。。值得一提的是回京的时候，我们租了一辆SUV从内蒙的乡下一路开车回赤峰机场，在一望无际的公路上一路狂奔，简直不要太爽！ &emsp;&emsp;项目推进过程中，我们内部却因为公司这段时间运营的还不错，开始在股份分配方面产生了分歧，最后没有谈拢，郭选择离开，并且带走了之前她接的山东和内蒙的项目，向我们支付了一些劳动报酬。其中是非对错我不想过多描述。 &emsp;&emsp;余这段时间也拿到了一个pos机相关的项目，由于pos机也是新型的android系统，技术选型还是定为Ionic，我也买了人生中第一本mac；虽然有项目在做，但是我们团队当时确实也感到了创业的艰难，于是项目做完之后，至7月底，我们团队整体就进入了元银国际。 关键词：元银国际；直播；react-native； &emsp;&emsp;进入元银国际之后开始了第一个项目就是以直播为主题的app，由于之前用的Ionic在性能上的问题还是很大，于是当时就在技术选型上商议了很久，最终定为react-native，然而我和晋当时都没有这方面的开发经验，于是就开始了边学边做的开发过程。开发过程中，困难重重也受益良多。 &emsp;&emsp;这一年过的很快，在技术方面，从java转向了nodejs，然后自学了react-native，也开发了两个上架的app，近期目标是学习android原生开发，不断丰富完善自己的技术栈。向着全栈前进！！！]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+      <tags>
+        <tag>又是一年</tag>
+      </tags>
+  </entry>
 </search>

@@ -91,6 +91,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/11/react项目在服务端部署方案/index.html">
 <meta property="og:site_name" content="RocWang">
 <meta property="og:description" content="一、环境搭建1、node 环境安装 登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：  123456789cd /usr/localmkdir nodecd nodewget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xzxz -d node-v6.11.2-linux-x64.tar.x">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://og3zicoi5.bkt.clouddn.com/pm2.png">
 <meta property="og:updated_time" content="2017-08-11T06:00:06.000Z">
 <meta name="twitter:card" content="summary">
@@ -352,7 +353,7 @@
         <h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><h3 id="1、node-环境安装"><a href="#1、node-环境安装" class="headerlink" title="1、node 环境安装"></a>1、node 环境安装</h3><ul>
 <li>登录到你的linux服务器上（针对于64位的服务器来说），然后在当前目录依次执行：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">cd /usr/local</div><div class="line">mkdir node</div><div class="line">cd node</div><div class="line">wget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xz</div><div class="line">xz -d node-v6.11.2-linux-x64.tar.xz</div><div class="line">tar xvf node-v6.11.2-linux-x64.tar</div><div class="line">mv node-v6.11.2-linux-x64 node-v6.11.2</div><div class="line">ln -s /usr/local/node/node-v6.11.2/bin/node  /usr/local/bin/node</div><div class="line">ln -s /usr/local/node/node-v6.11.2/bin/npm  /usr/local/bin/npm</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local</span><br><span class="line">mkdir node</span><br><span class="line">cd node</span><br><span class="line">wget https://nodejs.org/dist/v6.11.2/node-v6.11.2-linux-x64.tar.xz</span><br><span class="line">xz -d node-v6.11.2-linux-x64.tar.xz</span><br><span class="line">tar xvf node-v6.11.2-linux-x64.tar</span><br><span class="line">mv node-v6.11.2-linux-x64 node-v6.11.2</span><br><span class="line">ln -s /usr/local/node/node-v6.11.2/bin/node  /usr/local/bin/node</span><br><span class="line">ln -s /usr/local/node/node-v6.11.2/bin/npm  /usr/local/bin/npm</span><br></pre></td></tr></table></figure>
 <ul>
 <li>至此，node环境已经安装完毕，可以通过<code>node -v</code>来检查是否安装成功。</li>
 </ul>
@@ -362,51 +363,51 @@
 <ul>
 <li>首先进入配置文件：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/profile</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
 <ul>
 <li>按 <strong>i</strong> 键进入编辑模式，进入文件末尾添加：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node/node-v6.11.2/bin</div><div class="line">export PATH=$NODE_HOME:$PATH</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/usr/local/node/node-v6.11.2/bin</span><br><span class="line">export PATH=$NODE_HOME:$PATH</span><br></pre></td></tr></table></figure>
 <ul>
 <li>然后按 <strong>ESC</strong> 键 ，在控制台输入<code>:wq</code>，回车保存退出。</li>
 </ul>
 <blockquote>
 <p>注：具体的<strong>NODE_HOME</strong>路径来自第一步你的node安装的目录。</p>
 </blockquote>
-<h3 id="3、安装pm2模块"><a href="#3、安装pm2模块" class="headerlink" title="3、安装pm2模块"></a>3、安装<a href="http://pm2.keymetrics.io" target="_blank" rel="external">pm2</a>模块</h3><blockquote>
+<h3 id="3、安装pm2模块"><a href="#3、安装pm2模块" class="headerlink" title="3、安装pm2模块"></a>3、安装<a href="http://pm2.keymetrics.io" target="_blank" rel="noopener">pm2</a>模块</h3><blockquote>
 <p>pm2 是一个带有负载均衡功能的Node应用的进程管理器.</p>
 </blockquote>
 <ul>
 <li>执行：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g pm2</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行成功后，断开当前用户的服务器连接，然后重新登录。</li>
 </ul>
 <h2 id="二、-项目编译"><a href="#二、-项目编译" class="headerlink" title="二、 项目编译"></a>二、 项目编译</h2><h3 id="1、生成项目的根目录"><a href="#1、生成项目的根目录" class="headerlink" title="1、生成项目的根目录"></a>1、生成项目的根目录</h3><p>可以通过命令行或者手动创建的方式生成项目根目录，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir merchant-center</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir merchant-center</span><br></pre></td></tr></table></figure>
 <p>可以将<code>merchant-center</code>替换成你自己的项目名称。</p>
 <h3 id="2、配置express环境"><a href="#2、配置express环境" class="headerlink" title="2、配置express环境"></a>2、配置express环境</h3><p>将该文档的同级目录下的<code>app.js</code>和<code>package.json</code>两个文件放在你上一步生成的项目根目录下，然后执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>确保当前目录下生成<code>node_modules</code>文件夹。</p>
 <h3 id="3、生成项目的部署文件"><a href="#3、生成项目的部署文件" class="headerlink" title="3、生成项目的部署文件"></a>3、生成项目的部署文件</h3><ul>
 <li>在你的react项目根目录下执行：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 <ul>
 <li>成功后，会生成<strong>dist</strong>目录，该目录的内容就是你要部署到服务器上的文件。</li>
 <li>你可以通过：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sup [-r] [-P port] 源路径 user@目标IP地址:目标路径</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sup [-r] [-P port] 源路径 user@目标IP地址:目标路径</span><br></pre></td></tr></table></figure>
 <p>或者直接通拽的方式将该目录内容放置服务器上，然后将<code>dist</code>放在第一步生成的项目根目录下。此时，项目的目录结构应该是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">merchant-center        		//或其他项目名称</div><div class="line">	|____app.js				//可以打开修改里面的3000端口号</div><div class="line">	|____dist     			//项目生成的静态文件（不要重命名！）</div><div class="line">	|____node_modules		//express的依赖模块</div><div class="line">	|____package.json</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">merchant-center        		//或其他项目名称</span><br><span class="line">	|____app.js				//可以打开修改里面的3000端口号</span><br><span class="line">	|____dist     			//项目生成的静态文件（不要重命名！）</span><br><span class="line">	|____node_modules		//express的依赖模块</span><br><span class="line">	|____package.json</span><br></pre></td></tr></table></figure>
 <h2 id="三、项目启动"><a href="#三、项目启动" class="headerlink" title="三、项目启动"></a>三、项目启动</h2><p>首先确保你已经按照本文档执行了以上的所有步骤。然后在项目的根目录下执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js</span><br></pre></td></tr></table></figure>
 <p>当你看到了这样的日志输出的时候，说明你已经启动成功了！</p>
 <p><img src="http://og3zicoi5.bkt.clouddn.com/pm2.png" alt="启动成功"></p>
 <p>另外，pm2的其他命令行参考：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">pm2 start app.js              # 项目启动</div><div class="line">pm2 stop all                  # 停止所有pm2启动的应用</div><div class="line">pm2 stop 0                    # 停止进程id为0的进程</div><div class="line">pm2 restart all               # 重启所有应用</div><div class="line">pm2 reload all                # 0延迟重新加载</div><div class="line">pm2 list                      # 列出所有用pm2启动的进程</div><div class="line">pm2 monit                     # 显示每一个应用的内存和cpu使用情况</div><div class="line">pm2 show [app-name]           # 显示当前应用的所有信息</div><div class="line"></div><div class="line">pm2 logs                      # 显示所有应用的日志</div><div class="line">pm2 logs [app-name]           # 显示当前应用的日志</div><div class="line">pm2 logs --json               # 以json格式展示日志</div></pre></td></tr></table></figure>
-<p>更多操作命令可以去<a href="http://pm2.keymetrics.io" target="_blank" rel="external">pm2官网</a>或者其<a href="https://github.com/Unitech/pm2" target="_blank" rel="external">github</a>查看。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js              # 项目启动</span><br><span class="line">pm2 stop all                  # 停止所有pm2启动的应用</span><br><span class="line">pm2 stop 0                    # 停止进程id为0的进程</span><br><span class="line">pm2 restart all               # 重启所有应用</span><br><span class="line">pm2 reload all                # 0延迟重新加载</span><br><span class="line">pm2 list                      # 列出所有用pm2启动的进程</span><br><span class="line">pm2 monit                     # 显示每一个应用的内存和cpu使用情况</span><br><span class="line">pm2 show [app-name]           # 显示当前应用的所有信息</span><br><span class="line"></span><br><span class="line">pm2 logs                      # 显示所有应用的日志</span><br><span class="line">pm2 logs [app-name]           # 显示当前应用的日志</span><br><span class="line">pm2 logs --json               # 以json格式展示日志</span><br></pre></td></tr></table></figure>
+<p>更多操作命令可以去<a href="http://pm2.keymetrics.io" target="_blank" rel="noopener">pm2官网</a>或者其<a href="https://github.com/Unitech/pm2" target="_blank" rel="noopener">github</a>查看。</p>
 <p>至此，项目已经部署完成啦！</p>
 <p><strong>Open your browser , Enjoy it !</strong></p>
 
@@ -542,7 +543,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

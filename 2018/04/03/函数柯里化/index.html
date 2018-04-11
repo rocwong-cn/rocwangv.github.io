@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="不想和他们一样!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RocWang">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+<meta name="description" content="在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。  以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数柯里化">
+<meta property="og:url" content="http://yoursite.com/2018/04/03/函数柯里化/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="不想和他们一样!">
+<meta property="og:description" content="在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。  以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-11T03:59:57.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RocWang">
-<meta name="twitter:description" content="不想和他们一样!">
+<meta name="twitter:title" content="函数柯里化">
+<meta name="twitter:description" content="在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。  以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分">
 
 
 
@@ -111,7 +113,7 @@
   };
 </script>
 
-  <title> 归档 | RocWang </title>
+  <title> 函数柯里化 | RocWang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -259,66 +261,186 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 8 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                函数柯里化
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-03T14:15:53+08:00" content="2018-04-03">
+              2018-04-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/FE/" itemprop="url" rel="index">
+                    <span itemprop="name">FE</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+
+
+          
+
+          
+          
+             <span id="/2018/04/03/函数柯里化/" class="leancloud_visitors" data-flag-title="函数柯里化">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <blockquote>
+<p>在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
+</blockquote>
+<p>以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。<br>因此柯里化的过程是逐步传参，逐步缩小函数的适用范围，逐步求解的过程。</p>
+<p>先来看一下柯里化的通用实现：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice,</span><br><span class="line">            __args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);  </span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> __inargs = slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">                <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, __args.concat(__inargs));</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>解读一下这段代码：</p>
+<ul>
+<li>line 2 &amp; line 3 : Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组，除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换），所以这里是除了<strong>fn</strong>之外的参数全部转化为了数组</li>
+<li>接下来的 line 4/5/6/7 其实是返回了一个闭包</li>
+<li>line 5 将闭包函数内的参数转化为数组 __inargs</li>
+<li>line 6 执行传入的<strong>fn</strong>函数，其参数为两次传入参数的集合</li>
+<li>注：当apply传入null/undefined为第一个参数的时候将执行js全局对象，浏览器中是window，其他环境是global。</li>
+</ul>
+<p>柯里化的实用性提现在很多方面：</p>
+<h4 id="1-提高适用性"><a href="#1-提高适用性" class="headerlink" title="1 提高适用性"></a>1 提高适用性</h4><p>根据以上代码我们来做一个简单的实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">apple</span>(<span class="params">sth</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`apple <span class="subst">$&#123;sth&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pineapple</span>(<span class="params">sth</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="string">`pineapple <span class="subst">$&#123;sth&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">handler,list</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> list.map(handler);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//数据的每一项进行遍历拼接</span></span><br><span class="line">map(apple, [<span class="string">'pen'</span>,<span class="string">'watch'</span>,<span class="string">'phone'</span>]);</span><br><span class="line"></span><br><span class="line">map(pineapple, [<span class="string">'pen'</span>,<span class="string">'watch'</span>,<span class="string">'phone'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加入 柯里化 实现后,可以看到和上面的结果是一致的</span></span><br><span class="line"><span class="keyword">var</span> mapApple = currying(map, apple);</span><br><span class="line">mapApple([<span class="string">'pen'</span>,<span class="string">'watch'</span>,<span class="string">'phone'</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mapPine = currying(map, pineapple);</span><br><span class="line">mapPine([<span class="string">'pen'</span>,<span class="string">'watch'</span>,<span class="string">'phone'</span>]);</span><br></pre></td></tr></table></figure>
+<p>由此，可知柯里化不仅仅是提高了代码的合理性，更重的它突出一种思想—降低适用范围，提高适用性。</p>
+<h4 id="2-延迟执行"><a href="#2-延迟执行" class="headerlink" title="2 延迟执行"></a>2 延迟执行</h4><p>柯里化的另一个应用场景是延迟执行。不断的柯里化，累积传入的参数，最后执行。以下是其通用写法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> curry = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _args = []</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">cb</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, _args)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">Array</span>.prototype.push.apply(_args, <span class="built_in">arguments</span>);</span><br><span class="line">        <span class="keyword">return</span> cb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-固定易变因素"><a href="#3-固定易变因素" class="headerlink" title="3 固定易变因素"></a>3 固定易变因素</h4><p>柯里化特性决定了它这应用场景。提前把易变因素，传参固定下来，生成一个更明确的应用函数。最典型的代表应用，是bind函数用以固定this这个易变对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>,</span><br><span class="line">    _args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> _this.apply(context, _args.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;background:#f5f5f5;border-left: 5px solid #f44336;">
+    <div>请我喝杯咖啡，加班码字不会累！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏！</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://og3zicoi5.bkt.clouddn.com/tenpay.png" alt="Roc Wang WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://og3zicoi5.bkt.clouddn.com/alipay.png" alt="Roc Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+        </div>
+      
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/27/学习笔记一/" itemprop="url">
-              
-                <span itemprop="name">学习笔记一</span>
-              
-            </a>
-        
-      </h1>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/学习笔记一/" rel="next" title="学习笔记一">
+                <i class="fa fa-chevron-left"></i> 学习笔记一
+              </a>
+            
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-27T17:09:49+08:00"
-              content="2018-03-27" >
-          03-27
-        </time>
-      </div>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -326,6 +448,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/04/03/函数柯里化/"
+           data-title="函数柯里化" data-url="http://yoursite.com/2018/04/03/函数柯里化/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -345,8 +475,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://og3zicoi5.bkt.clouddn.com/blogAvatar"
@@ -434,6 +573,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-提高适用性"><span class="nav-number">1.</span> <span class="nav-text">1 提高适用性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-延迟执行"><span class="nav-number">2.</span> <span class="nav-text">2 延迟执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-固定易变因素"><span class="nav-number">3.</span> <span class="nav-text">3 固定易变因素</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -530,11 +680,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
