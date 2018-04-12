@@ -1305,7 +1305,7 @@ pre .javascript .function {
   }
 }
 .post-more-link {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .post-more-link .btn {
   color: #fff;
@@ -1663,7 +1663,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff0b63;
+  background: #1157ff;
 }
 .links-of-blogroll {
   font-size: 13px;
