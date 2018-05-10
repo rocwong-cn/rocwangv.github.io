@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习笔记," />
 
 
 
@@ -84,17 +84,20 @@
 
 
 
-<meta name="description" content="性别男，爱好钱；   懒；轻微强迫症；得了一种不到零点不睡的病；不听音乐会死星人；   ctrl+v 小能手；.net –&amp;gt; java –&amp;gt; javascript –&amp;gt; android? –&amp;gt; ios?我可是要成为全栈王的男人；   别看了，你这个死贱人！   （over）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="最近在收集面试题的时候发现了一些考查prototype的题目，然而很多都是一知半解的看完了，今天就深入理解一下prototype和proto 。 1注：由于hexo模板编译问题，文中的粗体proto均为__proto__. 首先要明确的是：  在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解__proto__和prototype">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/深入理解prototype/index.html">
 <meta property="og:site_name" content="RocWang">
-<meta property="og:description" content="性别男，爱好钱；   懒；轻微强迫症；得了一种不到零点不睡的病；不听音乐会死星人；   ctrl+v 小能手；.net –&amp;gt; java –&amp;gt; javascript –&amp;gt; android? –&amp;gt; ios?我可是要成为全栈王的男人；   别看了，你这个死贱人！   （over）">
+<meta property="og:description" content="最近在收集面试题的时候发现了一些考查prototype的题目，然而很多都是一知半解的看完了，今天就深入理解一下prototype和proto 。 1注：由于hexo模板编译问题，文中的粗体proto均为__proto__. 首先要明确的是：  在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-12-09T06:02:15.000Z">
+<meta property="og:image" content="http://og3zicoi5.bkt.clouddn.com/prototype">
+<meta property="og:updated_time" content="2018-05-10T12:49:12.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="性别男，爱好钱；   懒；轻微强迫症；得了一种不到零点不睡的病；不听音乐会死星人；   ctrl+v 小能手；.net –&amp;gt; java –&amp;gt; javascript –&amp;gt; android? –&amp;gt; ios?我可是要成为全栈王的男人；   别看了，你这个死贱人！   （over）">
+<meta name="twitter:title" content="深入理解__proto__和prototype">
+<meta name="twitter:description" content="最近在收集面试题的时候发现了一些考查prototype的题目，然而很多都是一知半解的看完了，今天就深入理解一下prototype和proto 。 1注：由于hexo模板编译问题，文中的粗体proto均为__proto__. 首先要明确的是：  在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具">
+<meta name="twitter:image" content="http://og3zicoi5.bkt.clouddn.com/prototype">
 
 
 
@@ -112,13 +115,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    about | RocWang
-  
-</title>
+  <title> 深入理解__proto__和prototype | RocWang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,22 +222,187 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <blockquote>
-<p>性别男，爱好钱；</p>
-</blockquote>
-<blockquote>
-<p>懒；<br>轻微强迫症；<br>得了一种不到零点不睡的病；<br>不听音乐会死星人；</p>
-</blockquote>
-<blockquote>
-<p>ctrl+v 小能手；<br>.net –&gt; java –&gt; javascript –&gt; android? –&gt; ios?<br>我可是要成为全栈王的男人；</p>
-</blockquote>
-<blockquote>
-<p>别看了，你这个死贱人！</p>
-</blockquote>
-<p> （over）</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                深入理解__proto__和prototype
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-05-10T20:20:21+08:00" content="2018-05-10">
+              2018-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+
+
+          
+
+          
+          
+             <span id="/2018/05/10/深入理解prototype/" class="leancloud_visitors" data-flag-title="深入理解__proto__和prototype">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近在收集面试题的时候发现了一些考查prototype的题目，然而很多都是一知半解的看完了，今天就深入理解一下prototype和<strong>proto</strong> 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注：由于hexo模板编译问题，文中的粗体proto均为__proto__.</span><br></pre></td></tr></table></figure>
+<p>首先要明确的是：</p>
+<ol>
+<li>在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性<strong>proto</strong>，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。<br>如：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.name = <span class="string">'Roc'</span>;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype);<span class="comment">//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125;</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p.__proto___);<span class="comment">//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(p.constructor.prototype);<span class="comment">//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>由此可以得出以上结论，以及：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instance.constructor.prototype = instance.__proto__</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><p>方法(Function)这个特殊的对象，除了和其他对象一样有上述<em>proto</em>属性之外，还有自己特有的属性——原型属性（prototype），这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。</p>
+<img src="http://og3zicoi5.bkt.clouddn.com/prototype" title="[prototype]">
+</li>
+</ol>
+<p>好啦，知道了这两个基本点，我们来看看上面这副图。</p>
+<ul>
+<li>构造函数Foo()构造函数的原型属性Foo.prototype指向了原型对象，在原型对象里有共有的方法，所有构造函数声明的实例（这里是f1，f2）都可以共享这个方法。</li>
+<li>原型对象Foo.prototypeFoo.prototype保存着实例共享的方法，有一个指针constructor指回构造函数。</li>
+<li>实例f1和f2是Foo这个对象的两个实例，这两个对象也有属性<strong>proto</strong>，指向构造函数的原型对象，这样子就可以像上面1所说的访问原型对象的所有方法啦。</li>
+<li>另外：构造函数Foo()除了是方法，也是对象啊，它也有<strong>proto</strong>属性，指向谁呢？指向它的构造函数的原型对象呗。函数的构造函数不就是Function嘛，因此这里的<strong>proto</strong>指向了Function.prototype。其实除了Foo()，Function(), Object()也是一样的道理。原型对象也是对象啊，它的<strong>proto</strong>属性，又指向谁呢？同理，指向它的构造函数的原型对象呗。这里是Object.prototype.最后，Object.prototype的<strong>proto</strong>属性指向null。<br><strong>&gt; 总结</strong>：</li>
+<li>对象有属性<strong>proto</strong>,指向该对象的构造函数的原型对象。</li>
+<li>方法除了有属性<strong>proto</strong>,还有属性prototype，prototype指向该方法的原型对象。</li>
+</ul>
+<p>（本文系转载）<br>作者：doris<br>链接：<a href="https://www.zhihu.com/question/34183746/answer/58155878" target="_blank" rel="noopener">https://www.zhihu.com/question/34183746/answer/58155878</a><br>来源：知乎</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;background:#f5f5f5;border-left: 5px solid #f44336;">
+    <div>请我喝杯咖啡，加班码字不会累！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏！</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://og3zicoi5.bkt.clouddn.com/tenpay.png" alt="Roc Wang WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://og3zicoi5.bkt.clouddn.com/alipay.png" alt="Roc Wang Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag">#学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/函数柯里化/" rel="next" title="函数柯里化">
+                <i class="fa fa-chevron-left"></i> 函数柯里化
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -249,6 +411,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -268,8 +434,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://og3zicoi5.bkt.clouddn.com/blogAvatar"
@@ -357,6 +532,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -453,6 +639,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[深入理解__proto__和prototype]]></title>
+    <url>%2F2018%2F05%2F10%2F%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3prototype%2F</url>
+    <content type="text"><![CDATA[最近在收集面试题的时候发现了一些考查prototype的题目，然而很多都是一知半解的看完了，今天就深入理解一下prototype和proto 。 1注：由于hexo模板编译问题，文中的粗体proto均为__proto__. 首先要明确的是： 在JS里，万物皆对象。方法（Function）是对象，方法的原型(Function.prototype)是对象。因此，它们都会具有对象共有的特点。即：对象具有属性proto，可称为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型，这也保证了实例能够访问在构造函数原型中定义的属性和方法。如：123456789function Person()&#123;&#125;Person.prototype.name = 'Roc';Person.prototype.getName = function()&#123; return this.name;&#125;console.log(Person.prototype);//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125;var p = new Person();console.log(p.__proto___);//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125;console.log(p.constructor.prototype);//&#123;name: "Roc", getName: ƒ, constructor: ƒ&#125; 由此可以得出以上结论，以及：1instance.constructor.prototype = instance.__proto__ 方法(Function)这个特殊的对象，除了和其他对象一样有上述proto属性之外，还有自己特有的属性——原型属性（prototype），这个属性是一个指针，指向一个对象，这个对象的用途就是包含所有实例共享的属性和方法（我们把这个对象叫做原型对象）。原型对象也有一个属性，叫做constructor，这个属性包含了一个指针，指回原构造函数。 好啦，知道了这两个基本点，我们来看看上面这副图。 构造函数Foo()构造函数的原型属性Foo.prototype指向了原型对象，在原型对象里有共有的方法，所有构造函数声明的实例（这里是f1，f2）都可以共享这个方法。 原型对象Foo.prototypeFoo.prototype保存着实例共享的方法，有一个指针constructor指回构造函数。 实例f1和f2是Foo这个对象的两个实例，这两个对象也有属性proto，指向构造函数的原型对象，这样子就可以像上面1所说的访问原型对象的所有方法啦。 另外：构造函数Foo()除了是方法，也是对象啊，它也有proto属性，指向谁呢？指向它的构造函数的原型对象呗。函数的构造函数不就是Function嘛，因此这里的proto指向了Function.prototype。其实除了Foo()，Function(), Object()也是一样的道理。原型对象也是对象啊，它的proto属性，又指向谁呢？同理，指向它的构造函数的原型对象呗。这里是Object.prototype.最后，Object.prototype的proto属性指向null。&gt; 总结： 对象有属性proto,指向该对象的构造函数的原型对象。 方法除了有属性proto,还有属性prototype，prototype指向该方法的原型对象。 （本文系转载）作者：doris链接：https://www.zhihu.com/question/34183746/answer/58155878来源：知乎]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[函数柯里化]]></title>
     <url>%2F2018%2F04%2F03%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
     <content type="text"><![CDATA[在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。 以上是来自维基百科的名词解释，有点绕。简而言之，柯里化通常也称部分求值，其含义是给函数分步传递参数，每次传递参数后部分应用参数，并返回一个更具体的函数接受剩下的参数，这中间可嵌套多层这样的接受部分参数函数，直至返回最后结果。因此柯里化的过程是逐步传参，逐步缩小函数的适用范围，逐步求解的过程。 先来看一下柯里化的通用实现：12345678function currying(fn) &#123; var slice = Array.prototype.slice, __args = slice.call(arguments, 1); return function () &#123; var __inargs = slice.call(arguments); return fn.apply(null, __args.concat(__inargs)); &#125;; &#125; 解读一下这段代码： line 2 &amp; line 3 : Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组，除了IE下的节点集合（因为ie下的dom对象是以com对象的形式实现的，js对象与com对象不能进行转换），所以这里是除了fn之外的参数全部转化为了数组 接下来的 line 4/5/6/7 其实是返回了一个闭包 line 5 将闭包函数内的参数转化为数组 __inargs line 6 执行传入的fn函数，其参数为两次传入参数的集合 注：当apply传入null/undefined为第一个参数的时候将执行js全局对象，浏览器中是window，其他环境是global。 柯里化的实用性提现在很多方面： 1 提高适用性根据以上代码我们来做一个简单的实现： 12345678910111213141516171819202122function apple(sth)&#123; console.log(`apple $&#123;sth&#125;`);&#125;function pineapple(sth)&#123; console.log( `pineapple $&#123;sth&#125;`);&#125;function map(handler,list)&#123; return list.map(handler);&#125;//数据的每一项进行遍历拼接map(apple, ['pen','watch','phone']);map(pineapple, ['pen','watch','phone']);//加入 柯里化 实现后,可以看到和上面的结果是一致的var mapApple = currying(map, apple);mapApple(['pen','watch','phone']);var mapPine = currying(map, pineapple);mapPine(['pen','watch','phone']); 由此，可知柯里化不仅仅是提高了代码的合理性，更重的它突出一种思想—降低适用范围，提高适用性。 2 延迟执行柯里化的另一个应用场景是延迟执行。不断的柯里化，累积传入的参数，最后执行。以下是其通用写法：12345678910var curry = function(fn) &#123; var _args = [] return function cb() &#123; if (arguments.length == 0) &#123; return fn.apply(this, _args) &#125; Array.prototype.push.apply(_args, arguments); return cb; &#125;&#125; 3 固定易变因素柯里化特性决定了它这应用场景。提前把易变因素，传参固定下来，生成一个更明确的应用函数。最典型的代表应用，是bind函数用以固定this这个易变对象。 12345678Function.prototype.bind = function(context) &#123; var _this = this, _args = Array.prototype.slice.call(arguments, 1); return function() &#123; return _this.apply(context, _args.concat(Array.prototype.slice.call(arguments))) &#125;&#125;]]></content>
       <categories>
-        <category>FE</category>
+        <category>JS</category>
       </categories>
       <tags>
         <tag>学习笔记</tag>
@@ -56,14 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[android打渠道包]]></title>
-    <url>%2F2016%2F12%2F10%2Fandroid%E6%89%93%E6%B8%A0%E9%81%93%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包 android {}安卓市场 c360 {}360市场 xiaomi {}小米市场 yingyongbao {}应用宝 flyme {}魅族flyme市场 wandoujia {}豌豆荚 anzhi {}安智市场 lenovo {}联想 huawei {}华为 yingyonghui {}应用汇 jifeng {}机锋市场 sougou {}搜狗市场 oppo {}oppo市场 uc {}UC商店/PP助手/淘宝助手 pp {}PP助手 mumayi {}木蚂蚁 vivo {}vivo jinli {}金立 souhu {}搜狐 baidu {}百度市场 productFlavors.all { flavor -&gt; flavor.manifestPlaceholders = [APP_CHANNEL: name] } } app/build.gradle 如果用到了友盟等統計插件的話，然後删除manifestPlaceholders里面的APP_CHANNEL,AndroidManifest.xml里面添加： 12&lt;meta-data android:value=&quot;$&#123;APP_CHANNEL&#125;&quot; android:name=&quot;UMENG_CHANNEL&quot;/&gt;]]></content>
-      <categories>
-        <category>android</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[2016年终总结]]></title>
     <url>%2F2016%2F12%2F10%2F2016%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[流光容易把人抛，红了樱桃，绿了芭蕉。 &emsp;&emsp;人们总是在感叹时光的飞逝，岁月的无情，眼看它红樱桃，眼看它绿芭蕉，总想着从明天开始我要如何努力的迎头赶上。可是今天还长，明天还远，自己定下的明天一直没有来到，无限颓废的今天一直过不去。 &emsp;&emsp;转眼一年即逝，既为慰藉逝去的一年，也为总结得失，故写一下这些流水账于此。 关键词：年初；商城；山东济南；投资？；Ionic；上线； &emsp;&emsp;年初，我们离开了丰瑞祥，创办了一家小公司，之于说公司，倒不如说是工作室。余、晋、郭、张、黄、李，我们七个人，郭主外，负责市场部，其余的除了余之外的我们几个主内负责技术研发。公司成立伊始，其实尚不足我们7个，只有晋和郭我们三个，当时接了一个山东大学的项目，做一个线上的商城和发布活动的app，android &amp; ios &amp; 微网站，项目总共下来30万左右吧，开发周期定的是一个月。时间紧！任务重！考虑到这些因素，我们当时就用了跨平台的技术框架Ionic！由于我们在北京这边当时也没办公地点，郭也正好在山东找了一个投资，说是如果能完成这个项目，就会投钱给我们，所以我们当时就直奔山东济南了。 &emsp;&emsp;刚去的几天，我和晋住的是宾馆，一天好像是150块钱，郭男朋友在山东，所以她不和我们一起住。由于白天要去投资方的公司去上班，所以就租住在离公司不远的地方，150块钱租的地方环境并不好，一到晚上隔壁房间还很闹，我们晚上完全没办法工作，几经商议后，我们退了宾馆租了一个两居室，为期一月，3000元。环境很好，熬夜也很多，由于我们之前还是有一些商城的开发经验的，所以项目的开发过程也很顺利。一个月内，完成了三个平台的应用上线！ &emsp;&emsp;呼~项目上线了，终于可以松一口气了。可是这个时候，投资方却传来消息说公司账务问题可能没办法注资给我们了。言下之意也很明显，也许是看我们团队太小，也可能是滋生了其他想法，反正就是不投钱了。无论如何，他们也还是对我们有所帮助的，在此致谢。 &emsp;&emsp;项目完成了，晋思家心切，我也思霾心切（MDZZ?），于是我们就返京了。 关键词：北京；VR；地下室；内蒙；奶牛；mac book pro；’郭’离开； &emsp;&emsp;啊，北京！还是熟悉的配方，熟悉的味道。闻着北京厚重的雾霾味道，我们回来了！ &emsp;&emsp;返京之前，余和郭在上地三街那边找了一个孵化器，孵化器内公司主要是做VR，不管怎样，我们暂时安定下来了。回到北京的这段时间，断断续续的维护了一段时间山东的那个商城项目，当时也感觉到了VR的火热，我们团队也有意想朝VR的这个方面去做，但是奈何我们都没有相关方面的经验，只好作罢。这时郭也正好拿到一个内蒙与牛相关的项目，但是需要去内蒙那边考核一下，实地感受一下牧民朋友和牛的热情（？？？）。 蓝蓝的天空 清清的湖水 哎耶绿绿的草原 这是我的家 哎耶奔驰的骏马 洁白的羊群 哎耶还有你姑娘 这是我的家 哎耶 腾格尔《天堂》 &emsp;&emsp;到了内蒙才知道，这个词里面唱的真的是真的！不过，内蒙的大哥们喝酒真的是豪爽，见面先三碗内蒙原浆。去了内蒙三天，没有一天晚上是竖着回酒店的。。。值得一提的是回京的时候，我们租了一辆SUV从内蒙的乡下一路开车回赤峰机场，在一望无际的公路上一路狂奔，简直不要太爽！ &emsp;&emsp;项目推进过程中，我们内部却因为公司这段时间运营的还不错，开始在股份分配方面产生了分歧，最后没有谈拢，郭选择离开，并且带走了之前她接的山东和内蒙的项目，向我们支付了一些劳动报酬。其中是非对错我不想过多描述。 &emsp;&emsp;余这段时间也拿到了一个pos机相关的项目，由于pos机也是新型的android系统，技术选型还是定为Ionic，我也买了人生中第一本mac；虽然有项目在做，但是我们团队当时确实也感到了创业的艰难，于是项目做完之后，至7月底，我们团队整体就进入了元银国际。 关键词：元银国际；直播；react-native； &emsp;&emsp;进入元银国际之后开始了第一个项目就是以直播为主题的app，由于之前用的Ionic在性能上的问题还是很大，于是当时就在技术选型上商议了很久，最终定为react-native，然而我和晋当时都没有这方面的开发经验，于是就开始了边学边做的开发过程。开发过程中，困难重重也受益良多。 &emsp;&emsp;这一年过的很快，在技术方面，从java转向了nodejs，然后自学了react-native，也开发了两个上架的app，近期目标是学习android原生开发，不断丰富完善自己的技术栈。向着全栈前进！！！]]></content>
@@ -73,5 +76,13 @@
       <tags>
         <tag>又是一年</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[android打渠道包]]></title>
+    <url>%2F2016%2F12%2F10%2Fandroid%E6%89%93%E6%B8%A0%E9%81%93%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[首先需要在android/app/build.gradle裡面添加一下命令： productFlavors {多渠道打包 android {}安卓市场 c360 {}360市场 xiaomi {}小米市场 yingyongbao {}应用宝 flyme {}魅族flyme市场 wandoujia {}豌豆荚 anzhi {}安智市场 lenovo {}联想 huawei {}华为 yingyonghui {}应用汇 jifeng {}机锋市场 sougou {}搜狗市场 oppo {}oppo市场 uc {}UC商店/PP助手/淘宝助手 pp {}PP助手 mumayi {}木蚂蚁 vivo {}vivo jinli {}金立 souhu {}搜狐 baidu {}百度市场 productFlavors.all { flavor -&gt; flavor.manifestPlaceholders = [APP_CHANNEL: name] } } app/build.gradle 如果用到了友盟等統計插件的話，然後删除manifestPlaceholders里面的APP_CHANNEL,AndroidManifest.xml里面添加： 12&lt;meta-data android:value=&quot;$&#123;APP_CHANNEL&#125;&quot; android:name=&quot;UMENG_CHANNEL&quot;/&gt;]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
 </search>
